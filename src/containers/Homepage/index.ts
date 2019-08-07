@@ -8,15 +8,10 @@ import {
 } from '../../redux/actions';
 import { Homepage } from './Homepage';
 import { InterfaceTask } from '../../models';
-import { getAllTasks, getDoneTasks, getInProgressTasks, getToDoTasks } from '../../redux/tools';
 
 const mapStateToProps = (state: IStore) => ({
     isLoading: state.isLoading,
     tasks: state.tasks,
-    allTasksList: getAllTasks(state),
-    doneTasksList: getDoneTasks(state),
-    todoTasksList: getToDoTasks(state),
-    inProgressTasksList: getInProgressTasks(state),
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
