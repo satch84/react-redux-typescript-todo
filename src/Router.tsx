@@ -6,19 +6,30 @@ import { routeHome, routeCredits, routeToDo } from './const/routes';
 import { createStore } from 'redux';
 import { rootReducer } from './redux/reducers';
 import { createBrowserHistory as createHistory } from 'history';
+import { saveState, loadSerializedState } from './tools';
 
-const store = createStore(rootReducer);
+const persistedState = loadSerializedState();
+const store = createStore(
+  rootReducer,
+  persistedState
+);
+store.subscribe(() => {
+  saveState({
+    tasks: store.getState().tasks
+  });
+});
+
 const history = createHistory();
 
 const Routes = () => (
-    <Provider store={store}>
-      <Router history={history}>
-        <Switch>
-          <Route path={routeHome} component={Homepage} />
-          <Route path={routeCredits} component={Credits} />
-        </Switch>
-      </Router>
-    </Provider>
+  <Provider store={store}>
+    <Router history={history}>
+      <Switch>
+        <Route path={routeHome} component={Homepage} />
+        <Route path={routeCredits} component={Credits} />
+      </Switch>
+    </Router>
+  </Provider>
 );
 
 export { Routes };

@@ -9,7 +9,7 @@ export const tasks = (state = initialState.tasks, action: IActionTypes)   => {
         case TASK__CREATE:
             const {
                 payload: { task },
-            } = action as ICreateTaskAction;;
+            } = action as ICreateTaskAction;
 
             return {
                 ...state,

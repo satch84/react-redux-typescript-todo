@@ -6,12 +6,12 @@
 * selector tasks
 * component to show tasks selectors (array as props)
 * component to show tasks lists (array as props)
-- component to show form
+* component to show form
 
 ------ Hard tasks ------
 
 - fix routing
-- persist list in local storage
+* persist list in local storage
 
 ------ DISPLAY -------
 

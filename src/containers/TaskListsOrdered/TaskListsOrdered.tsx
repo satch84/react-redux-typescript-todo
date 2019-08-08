@@ -16,9 +16,9 @@ const TaskListsOrdered: React.FC<ITaskListsOrderedProps> = props => {
         {tasks.taskList.length > 0 &&
             <div>
                 <div>Total des tâches {allTasksList.length}</div>
-                <div>Toutes les tâches terminées {doneTasksList.length}</div>
-                <div>Toutes les tâches en cours {inProgressTasksList.length}</div>
-                <div>Toutes les tâches à faire {todoTasksList.length}</div>
+                <div>Tâches terminées {doneTasksList.length}</div>
+                <div>Tâches en cours {inProgressTasksList.length}</div>
+                <div>Tâches à faire {todoTasksList.length}</div>
             </div>
         }
         </>
