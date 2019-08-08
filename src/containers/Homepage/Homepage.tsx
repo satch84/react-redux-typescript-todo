@@ -63,7 +63,7 @@ class Homepage extends React.Component<HomepageProps, HomepageState> {
         const taskList = this.props.tasks.taskList;
         return (
             <>
-                {/* <Header /> */}
+                <Header />
                     <MainContent>
                         <Grid container={true}>
                             <Grid item={true} xs={6}>
@@ -72,11 +72,11 @@ class Homepage extends React.Component<HomepageProps, HomepageState> {
                             </Grid>
                             <Grid item={true} xs={6}>
                                 <TaskListsOrdered />
-                                {taskList.length > 0 && <Button variant="outlined" onClick={this.props.taskClear}>Supprimer toutes les tâches</Button>}
+                                {taskList.length > 0 && <Button color="primary" variant="contained" onClick={this.props.taskClear}>Supprimer toutes les tâches</Button>}
                             </Grid>
                         </Grid>
                     </MainContent>
-                {/* <Footer /> */}
+                <Footer />
             </>
         );
     };

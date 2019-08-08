@@ -6,10 +6,11 @@ interface ButtonProps {
     onClick?: () => void;
     color?: 'primary' | 'secondary';
     variant?: 'text' | 'outlined' | 'contained';
+    isDisabled?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = props => (
-    <MuiButton variant={props.variant} children={props.children} onClick={props.onClick} color={props.color} />
+const Button: React.FC<ButtonProps> = ({ isDisabled, variant, children, onClick, color }) => (
+    <MuiButton disabled={isDisabled} variant={variant} children={children} onClick={onClick} color={color} />
 );
 
 export { Button };

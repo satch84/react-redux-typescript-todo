@@ -1,6 +1,7 @@
 import DeleteIcon from '@material-ui/icons/Delete';
 import * as React from 'react';
 import { Button, Fab } from '../';
+import { TASK_STATUS_DONE } from '../../const/taskStatus';
 import { InterfaceTask } from '../../models';
 
 interface ITasksListProps {
@@ -17,8 +18,8 @@ const TasksList: React.FC<ITasksListProps> = ({ tasks, handleTaskDelete, handleT
                     <li key={task.uuid}>
                         {task.content}
                         | {task.date}
-                        | <Button variant="outlined" onClick={handleTaskUpdate(task.uuid, task.status)}>{task.status}</Button>
-                        | <Fab onClick={handleTaskDelete(task.uuid)}><DeleteIcon /></Fab>
+                        | <Button variant="contained" color="primary" onClick={handleTaskUpdate(task.uuid, task.status)} isDisabled={task.status === TASK_STATUS_DONE}>{task.status}</Button>
+                        | <Fab onClick={handleTaskDelete(task.uuid)} color="secondary"><DeleteIcon /></Fab>
                     </li>
                 );
             })

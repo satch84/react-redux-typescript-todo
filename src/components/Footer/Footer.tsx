@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { routeCredits, routeHome } from '../../const/routes';
 import { FooterNavigation } from '../Navigation'; 
 import { MainFooterStyled } from './Footer.style';
 
@@ -6,13 +7,13 @@ const footerLinks = {
     'accueil': [
         { 
             'label': 'Accueil',
-            'url': './',
+            'url': routeHome,
         },
     ],
     'credits': [
         { 
             'label': 'Crédits',
-            'url': '/credits',
+            'url': routeCredits,
         },
     ],
 };

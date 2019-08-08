@@ -1,14 +1,12 @@
-import * as React from 'react';
 import { createBrowserHistory as createHistory } from 'history';
+import * as React from 'react';
 import { Provider } from 'react-redux';
-import { rootReducer } from './redux/reducers';
-import { Route, Router, Switch } from 'react-router';
+import { Route, Router } from 'react-router';
 import { createStore } from 'redux';
+import { routeCredits, routeHome } from './const/routes';
 import { Credits, Homepage } from './containers';
+import { rootReducer } from './redux/reducers';
 import { loadSerializedState, saveState } from './tools';
-
-
-import { routeCredits, routeHome, routeToDo } from './const/routes';
 
 const persistedState = loadSerializedState();
 const store = createStore(
@@ -26,10 +24,8 @@ const history = createHistory();
 const Routes = () => (
   <Provider store={store}>
     <Router history={history}>
-      <Switch>
-        <Route path={routeHome} component={Homepage} />
-        <Route path={routeCredits} component={Credits} />
-      </Switch>
+      <Route exact={true} path={routeHome} component={Homepage} />
+      <Route path={routeCredits} component={Credits} />
     </Router>
   </Provider>
 );

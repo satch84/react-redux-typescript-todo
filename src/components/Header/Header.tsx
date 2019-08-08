@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { routeHome } from '../../const/routes';
 import { HeaderNavigation } from '../Navigation'; 
 import { MainHeaderStyled } from './Header.style';
 
@@ -6,13 +7,7 @@ const headerLinks = {
     'accueil': [
         { 
             'label': 'Accueil',
-            'url': './',
-        },
-    ],
-    'list': [
-        {
-            'label': 'To Do List',
-            'url': '/to-do-list',
+            'url': routeHome,
         },
     ],
 };

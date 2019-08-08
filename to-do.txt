@@ -10,7 +10,7 @@
 
 ------ Hard tasks ------
 
-- fix routing
+* fix routing
 * persist list in local storage
 
 ------ DISPLAY -------
