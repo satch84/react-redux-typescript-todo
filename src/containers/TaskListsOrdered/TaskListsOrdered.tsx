@@ -15,10 +15,13 @@ const TaskListsOrdered: React.FC<ITaskListsOrderedProps> = props => {
         <>
         {tasks.taskList.length > 0 &&
             <div>
-                <div>Total des tâches {allTasksList.length}</div>
-                <div>Tâches terminées {doneTasksList.length}</div>
-                <div>Tâches en cours {inProgressTasksList.length}</div>
-                <div>Tâches à faire {todoTasksList.length}</div>
+                <strong>Suivi de votre to-do list</strong>
+                <ul>
+                    <li>Total des tâches : <strong>{allTasksList.length}</strong></li>
+                    <li>Tâches terminées : <strong>{doneTasksList.length}</strong></li>
+                    <li>Tâches en cours : <strong>{inProgressTasksList.length}</strong></li>
+                    <li>Tâches à faire : <strong>{todoTasksList.length}</strong></li>
+                </ul>
             </div>
         }
         </>
