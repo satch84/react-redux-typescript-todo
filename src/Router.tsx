@@ -21,7 +21,7 @@ store.subscribe(() => {
 
 const history = createHistory();
 
-const Routes = () => (
+const TodoApp = () => (
   <Provider store={store}>
     <Router history={history}>
       <Route exact={true} path={routeHome} component={Homepage} />
@@ -30,4 +30,4 @@ const Routes = () => (
   </Provider>
 );
 
-export { Routes };
+export { TodoApp };

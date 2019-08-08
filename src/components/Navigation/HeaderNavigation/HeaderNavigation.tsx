@@ -4,10 +4,10 @@ interface HeaderNavigationProps {
     links: { [key: string]: any[] };
 }
 
-const HeaderNavigation: React.FC<HeaderNavigationProps> = props => (
+const HeaderNavigation: React.FC<HeaderNavigationProps> = ({ links }) => (
     <>
-        {Object.keys(props.links).map((link, index) =>
-            <a href={props.links[link][0].url} key={index}>{props.links[link][0].label}</a>
+        {Object.keys(links).map((link, index) =>
+            <a href={links[link][0].url} key={index}>{links[link][0].label}</a>
         )}
     </>
 );

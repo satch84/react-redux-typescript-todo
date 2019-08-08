@@ -10,8 +10,8 @@ interface TextfieldProp {
     onChange?: (arg: any) => void;
 }
 
-const Textfield: React.FC<TextfieldProp> = props => (
-    <MuiTextField variant='outlined' value={props.value} required={props.isRequired} label={props.label} onChange={props.onChange} disabled={props.isDisabled} error={props.hasError} />
+const Textfield: React.FC<TextfieldProp> = ({ hasError, isDisabled, isRequired, label, value, onChange }) => (
+    <MuiTextField variant='outlined' value={value} required={isRequired} label={label} onChange={onChange} disabled={isDisabled} error={hasError} />
 );
 
 export { Textfield };

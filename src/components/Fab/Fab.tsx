@@ -5,10 +5,11 @@ interface FabProps {
     children: React.ReactNode;
     onClick?: () => void;
     color?: 'primary' | 'secondary';
+    size?: 'small' | 'medium' | 'large';
 }
 
-const Fab: React.FC<FabProps> = props => (
-    <MuiFab children={props.children} onClick={props.onClick} color={props.color} />
+const Fab: React.FC<FabProps> = ({ children, onClick, color, size }) => (
+    <MuiFab children={children} onClick={onClick} color={color} size={size} />
 );
 
 export { Fab };

@@ -5,8 +5,8 @@ interface MainContentProps {
     children: React.ReactNode;
 }
 
-const MainContent: React.FC <MainContentProps> = props => (
-    <MainContentStyled>{props.children}</MainContentStyled>
+const MainContent: React.FC <MainContentProps> = ({ children }) => (
+    <MainContentStyled>{children}</MainContentStyled>
 );
 
 export { MainContent };
