@@ -5,3 +5,4 @@ export * from './MainContent';
 export * from './Button';
 export * from './Form';
 export * from './TasksList';
+export * from './Fab';

@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Button } from '../Button';
+import { Button, Fab } from '../';
 import { InterfaceTask } from '../../models';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 interface ITasksListProps {
     handleTaskUpdate: (uuid: string, status: string) => () => void;
@@ -17,7 +18,7 @@ const TasksList: React.FC<ITasksListProps> = ({ tasks, handleTaskDelete, handleT
                         {task.content}
                         | {task.date}
                         | <Button variant="outlined" onClick={handleTaskUpdate(task.uuid, task.status)}>{task.status}</Button>
-                        | <Button variant="outlined" onClick={handleTaskDelete(task.uuid)}>DELETE</Button>
+                        | <Fab onClick={handleTaskDelete(task.uuid)}><DeleteIcon /></Fab>
                     </li>
                 );
             })
