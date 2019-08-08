@@ -1,10 +1,9 @@
-import * as React from 'react';
 import { Grid } from '@material-ui/core';
-import { HomepageMainStyled } from './Homepage.style';
+import * as React from 'react';
 import { Button, Footer, Header, MainContent, TaskForm, TasksList } from '../../components/';
+import { TASK_STATUS_DONE, TASK_STATUS_IN_PROGRESS, TASK_STATUS_TODO } from '../../const/taskStatus';
 import { checkExistingTask, checkValueIsNotEmpty, createUuid, getDateAndHour } from '../../helpers';
 import { InterfaceTask, InterfaceTaskType } from '../../models';
-import { TASK_STATUS_TODO, TASK_STATUS_IN_PROGRESS, TASK_STATUS_DONE } from '../../const/taskStatus';
 import { TaskListsOrdered } from '../TaskListsOrdered';
 
 interface HomepageState {
@@ -66,12 +65,12 @@ class Homepage extends React.Component<HomepageProps, HomepageState> {
             <>
                 {/* <Header /> */}
                     <MainContent>
-                        <Grid container>
-                            <Grid item xs={6}>
+                        <Grid container={true}>
+                            <Grid item={true} xs={6}>
                                 <TasksList tasks={taskList} handleTaskDelete={this.handleTaskDelete} handleTaskUpdate={this.handleTaskUpdate} />
                                 <TaskForm value={this.state.value} handleChange={this.handleChange} handleTaskCreate={this.handleTaskCreate} />
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item={true} xs={6}>
                                 <TaskListsOrdered />
                                 {taskList.length > 0 && <Button variant="outlined" onClick={this.props.taskClear}>Supprimer toutes les tâches</Button>}
                             </Grid>

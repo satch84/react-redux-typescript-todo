@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { MainHeaderStyled } from './Header.style';
 import { HeaderNavigation } from '../Navigation'; 
+import { MainHeaderStyled } from './Header.style';
 
 const headerLinks = {
     'accueil': [

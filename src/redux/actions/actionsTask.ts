@@ -1,5 +1,5 @@
-import { TASK__CREATE, TASK__DELETE, TASK__CLEAR, TASK__UPDATE } from '../../const/actions';
-import { ICreateTaskAction, IDeleteTaskAction, IClearTaskAction, IUpdateTaskAction, InterfaceTask } from '../../models'; 
+import { TASK__CLEAR, TASK__CREATE, TASK__DELETE, TASK__UPDATE } from '../../const/actions';
+import { IClearTaskAction, ICreateTaskAction, IDeleteTaskAction, InterfaceTask, IUpdateTaskAction } from '../../models'; 
 
 export const taskCreate = (task: InterfaceTask): ICreateTaskAction => ({
     payload: {

@@ -1,7 +1,7 @@
+import DeleteIcon from '@material-ui/icons/Delete';
 import * as React from 'react';
 import { Button, Fab } from '../';
 import { InterfaceTask } from '../../models';
-import DeleteIcon from '@material-ui/icons/Delete';
 
 interface ITasksListProps {
     handleTaskUpdate: (uuid: string, status: string) => () => void;

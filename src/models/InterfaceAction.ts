@@ -1,6 +1,6 @@
-import { 
+import {
+    IClearTaskAction,
     ICreateTaskAction, 
-    IClearTaskAction, 
     IDeleteTaskAction, 
     IUpdateTaskAction 
 } from './interfaceTask';

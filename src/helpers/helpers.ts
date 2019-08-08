@@ -1,5 +1,4 @@
 import * as uuid from 'uuid';
-import { TASK_STATUS_TODO, TASK_STATUS_IN_PROGRESS, TASK_STATUS_DONE } from '../const/taskStatus';
 import { InterfaceTask } from '../models';
 
 /** get current time and date */

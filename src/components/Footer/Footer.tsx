@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { MainFooterStyled } from './Footer.style';
 import { FooterNavigation } from '../Navigation'; 
+import { MainFooterStyled } from './Footer.style';
 
 const footerLinks = {
     'accueil': [

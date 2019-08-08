@@ -1,6 +1,6 @@
+import { TASK__CLEAR, TASK__CREATE, TASK__DELETE, TASK__UPDATE } from '../../const/actions';
 import { IActionTypes, ICreateTaskAction, IDeleteTaskAction, IUpdateTaskAction } from '../../models';
-import { initialState } from '../store/initialState'; 
-import { TASK__CREATE, TASK__DELETE, TASK__CLEAR, TASK__UPDATE } from '../../const/actions';
+import { initialState } from '../store/initialState';
 
 export const tasks = (state = initialState.tasks, action: IActionTypes)   => {
     const { type } = action;

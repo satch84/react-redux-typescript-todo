@@ -12,7 +12,7 @@
         "no-console": false,
         "semicolon": false,
         "jsx-no-lambda": false,
-        "jsx-no-multiline-js": false,
+        "jsx-no-multiline-js": false
     },
     "rulesDirectory": [
     ],
