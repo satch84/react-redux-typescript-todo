@@ -1,5 +1,7 @@
+import { Typography } from '@material-ui/core';
 import * as React from 'react';
 import { InterfaceTaskType } from '../../models';
+import { TasksListItem, TasksListTitle } from './TaskListsOrdered.style';
 
 interface ITaskListsOrderedProps {
     allTasksList: [],
@@ -15,12 +17,30 @@ const TaskListsOrdered: React.FC<ITaskListsOrderedProps> = props => {
         <>
         {tasks.taskList.length > 0 &&
             <div>
-                <strong>Suivi de votre to-do list</strong>
+                <TasksListTitle variant="h3" color="primary">
+                    ToDo list stats:
+                </TasksListTitle>
                 <ul>
-                    <li>Total des tâches : <strong>{allTasksList.length}</strong></li>
-                    <li>Tâches terminées : <strong>{doneTasksList.length}</strong></li>
-                    <li>Tâches en cours : <strong>{inProgressTasksList.length}</strong></li>
-                    <li>Tâches à faire : <strong>{todoTasksList.length}</strong></li>
+                    <TasksListItem>
+                        <Typography variant="body1">
+                            TOTAL TASKS: <strong>{allTasksList.length}</strong>
+                        </Typography>
+                    </TasksListItem>
+                    <TasksListItem>
+                        <Typography variant="body1">
+                            Tasks to do: <strong>{todoTasksList.length}</strong>
+                        </Typography>
+                    </TasksListItem>
+                    <TasksListItem>
+                        <Typography variant="body1">
+                            In progress tasks: <strong>{inProgressTasksList.length}</strong>
+                        </Typography>
+                    </TasksListItem>
+                    <TasksListItem>
+                        <Typography variant="body1" color="secondary">
+                            Done tasks: <strong>{doneTasksList.length}</strong>
+                        </Typography>
+                    </TasksListItem>
                 </ul>
             </div>
         }

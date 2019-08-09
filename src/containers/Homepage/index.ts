@@ -1,13 +1,12 @@
-import { IStore } from '../../models';
 import { connect } from 'react-redux';
+import { InterfaceTask, IStore } from '../../models';
 import {
+    taskClear,
     taskCreate,
     taskDelete,
     taskUpdate,
-    taskClear,
 } from '../../redux/actions';
 import { Homepage } from './Homepage';
-import { InterfaceTask } from '../../models';
 
 const mapStateToProps = (state: IStore) => ({
     isLoading: state.isLoading,

@@ -5,6 +5,7 @@ import { TASK_STATUS_DONE, TASK_STATUS_IN_PROGRESS, TASK_STATUS_TODO } from '../
 import { checkExistingTask, checkValueIsNotEmpty, createUuid, getDateAndHour } from '../../helpers';
 import { InterfaceTask, InterfaceTaskType } from '../../models';
 import { TaskListsOrdered } from '../TaskListsOrdered';
+import { MainContentStyled, TaskContentWrapper } from './Homepage.style';
 
 interface HomepageState {
     value: string;
@@ -62,22 +63,22 @@ class Homepage extends React.Component<HomepageProps, HomepageState> {
     public render() {
         const taskList = this.props.tasks.taskList;
         return (
-            <>
+            <MainContentStyled>
                 <Header />
                     <MainContent>
                         <Grid container={true}>
-                            <Grid item={true} xs={6}>
+                            <TaskContentWrapper item={true} xs={12} sm={6}>
                                 <TasksList tasks={taskList} handleTaskDelete={this.handleTaskDelete} handleTaskUpdate={this.handleTaskUpdate} />
+                            </TaskContentWrapper>
+                            <TaskContentWrapper item={true} xs={12} sm={6}>
                                 <TaskForm value={this.state.value} handleChange={this.handleChange} handleTaskCreate={this.handleTaskCreate} />
-                            </Grid>
-                            <Grid item={true} xs={6}>
                                 <TaskListsOrdered />
                                 {taskList.length > 0 && <Button color="primary" variant="contained" onClick={this.props.taskClear}>Supprimer toutes les tâches</Button>}
-                            </Grid>
+                            </TaskContentWrapper>
                         </Grid>
                     </MainContent>
                 <Footer />
-            </>
+            </MainContentStyled>
         );
     };
     

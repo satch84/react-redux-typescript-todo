@@ -6,13 +6,13 @@ import { MainHeaderStyled } from './Header.style';
 const headerLinks = {
     'accueil': [
         { 
-            'label': 'Accueil',
+            'label': 'ToDo App',
             'url': routeHome,
         },
     ],
 };
 
-const Header: React.FC <{}> = () => (
+const Header: React.FC = () => (
     <MainHeaderStyled>
         <HeaderNavigation links={headerLinks} />
     </MainHeaderStyled>

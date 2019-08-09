@@ -8,10 +8,11 @@ interface TextfieldProp {
     label?: string;
     value?: string;
     onChange?: (arg: any) => void;
+    fullWidth: boolean;
 }
 
-const Textfield: React.FC<TextfieldProp> = ({ hasError, isDisabled, isRequired, label, value, onChange }) => (
-    <MuiTextField variant='outlined' value={value} required={isRequired} label={label} onChange={onChange} disabled={isDisabled} error={hasError} />
+const Textfield: React.FC<TextfieldProp> = ({ hasError, fullWidth, isDisabled, isRequired, label, value, onChange }) => (
+    <MuiTextField variant='outlined' fullWidth={fullWidth} value={value} required={isRequired} label={label} onChange={onChange} disabled={isDisabled} error={hasError} />
 );
 
 export { Textfield };

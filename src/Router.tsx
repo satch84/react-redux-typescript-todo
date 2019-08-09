@@ -1,3 +1,4 @@
+import { MuiThemeProvider as ThemeProvider } from '@material-ui/core';
 import { createBrowserHistory as createHistory } from 'history';
 import * as React from 'react';
 import { Provider } from 'react-redux';
@@ -6,6 +7,8 @@ import { createStore } from 'redux';
 import { routeCredits, routeHome } from './const/routes';
 import { Credits, Homepage } from './containers';
 import { rootReducer } from './redux/reducers';
+import { GlobalStyle } from './styledComponents/global';
+import { theme } from './styledComponents/theme';
 import { loadSerializedState, saveState } from './tools';
 
 const persistedState = loadSerializedState();
@@ -22,12 +25,17 @@ store.subscribe(() => {
 const history = createHistory();
 
 const TodoApp = () => (
-  <Provider store={store}>
-    <Router history={history}>
-      <Route exact={true} path={routeHome} component={Homepage} />
-      <Route path={routeCredits} component={Credits} />
-    </Router>
-  </Provider>
+  <>
+    <GlobalStyle />
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Router history={history}>
+          <Route exact={true} path={routeHome} component={Homepage} />
+          <Route path={routeCredits} component={Credits} />
+        </Router>
+      </ThemeProvider>
+    </Provider>
+  </>
 );
 
 export { TodoApp };

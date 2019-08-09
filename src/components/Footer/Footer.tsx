@@ -6,19 +6,19 @@ import { MainFooterStyled } from './Footer.style';
 const footerLinks = {
     'accueil': [
         { 
-            'label': 'Accueil',
+            'label': 'ToDo App',
             'url': routeHome,
         },
     ],
     'credits': [
         { 
-            'label': 'Crédits',
+            'label': 'Credits',
             'url': routeCredits,
         },
     ],
 };
 
-const Footer: React.FC <{}> = () => (
+const Footer: React.FC = () => (
     <MainFooterStyled>
         <FooterNavigation links={footerLinks} />
     </MainFooterStyled>
