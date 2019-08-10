@@ -12,8 +12,8 @@ const TaskForm: React.FC<ITaskFormProps> = ({ handleChange, handleTaskCreate, va
     <FormWrapper>
         <FormTitle variant="h3" color="primary">Manage ToDo list:</FormTitle>
         <form name='to_do_list'>
-            <Textfield label='Entrez une tâche' value={value || ''} fullWidth={true} isRequired={true} onChange={handleChange} />
-            <Button color='primary' variant='contained' fullWidth={true} onClick={handleTaskCreate}>Ajouter</Button>
+            <Textfield label='Type a task' value={value || ''} fullWidth={true} isRequired={true} onChange={handleChange} />
+            <Button color='primary' variant='contained' fullWidth={true} onClick={handleTaskCreate}>Add a task</Button>
         </form>
     </FormWrapper>
 );

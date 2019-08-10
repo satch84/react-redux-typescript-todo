@@ -73,7 +73,7 @@ class Homepage extends React.Component<HomepageProps, HomepageState> {
                             <TaskContentWrapper item={true} xs={12} sm={6}>
                                 <TaskForm value={this.state.value} handleChange={this.handleChange} handleTaskCreate={this.handleTaskCreate} />
                                 <TaskListsOrdered />
-                                {taskList.length > 0 && <Button color="primary" variant="contained" onClick={this.props.taskClear}>Supprimer toutes les tâches</Button>}
+                                {taskList.length > 0 && <Button color="primary" variant="contained" onClick={this.props.taskClear}>Clear tasks list</Button>}
                             </TaskContentWrapper>
                         </Grid>
                     </MainContent>

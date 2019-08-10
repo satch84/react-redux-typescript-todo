@@ -23,7 +23,7 @@ const TaskListsOrdered: React.FC<ITaskListsOrderedProps> = props => {
                 <ul>
                     <TasksListItem>
                         <Typography variant="body1">
-                            TOTAL TASKS: <strong>{allTasksList.length}</strong>
+                            Total tasks: <strong>{allTasksList.length}</strong>
                         </Typography>
                     </TasksListItem>
                     <TasksListItem>

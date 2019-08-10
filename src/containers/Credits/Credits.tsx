@@ -5,7 +5,7 @@ const Credits: React.FC = () => (
     <>
         <Header />
             <MainContent>
-                Page de crédits     
+                Credits page
             </MainContent>
         <Footer />
     </>
