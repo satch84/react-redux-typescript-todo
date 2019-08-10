@@ -1,7 +1,7 @@
 {
-  "name": "frog_game",
+  "name": "react_redux_typescript_todo",
   "version": "1.0.0",
-  "description": "Just a game test in React TS",
+  "description": "Just a todo app using React / Redux / TypeScript and MUI theme",
   "main": "./dist/main.js",
   "author": "Satch",
   "license": "MIT",
