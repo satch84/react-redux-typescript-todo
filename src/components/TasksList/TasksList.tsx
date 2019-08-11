@@ -41,7 +41,7 @@ const TasksList: React.FC<ITasksListProps> = ({ tasks, handleTaskDelete, handleT
                 );
             })
             :
-            <TaskItem>Aucune tâche créée</TaskItem>
+            <TaskItem>No task has been created yet!</TaskItem>
         }
     </TaskItemList>
 );

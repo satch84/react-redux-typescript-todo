@@ -4,14 +4,14 @@ import { FooterNavigation } from '../Navigation';
 import { MainFooterStyled } from './Footer.style';
 
 const footerLinks = {
-    'accueil': [
+    'home': [
         { 
             'label': 'ToDo App',
             'url': routeHome,
         },
     ],
     'credits': [
-        { 
+        {
             'label': 'Credits',
             'url': routeCredits,
         },
