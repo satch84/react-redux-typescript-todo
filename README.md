@@ -12,3 +12,7 @@ You need to have **NodeJs** installed as **Yarn** to manage dependencies.
 Then just launch `yarn install` and `yarn start` to use the app.
 
 The tasks added are persisted in the local storage which is linked to the Redux store of the app.
+
+# Evolution
+
+See [To do list](to-do.txt )

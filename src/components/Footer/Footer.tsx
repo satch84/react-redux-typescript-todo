@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { routeCredits, routeHome } from '../../const/routes';
-import { FooterNavigation } from '../Navigation'; 
+import { Navigation } from '../Navigation'; 
 import { MainFooterStyled } from './Footer.style';
 
 const footerLinks = {
@@ -18,10 +18,8 @@ const footerLinks = {
     ],
 };
 
-const Footer: React.FC = () => (
+export const Footer: React.FC = () => (
     <MainFooterStyled>
-        <FooterNavigation links={footerLinks} />
+        <Navigation links={footerLinks} />
     </MainFooterStyled>
 );
-
-export { Footer };

@@ -1,10 +1,10 @@
-import { IStore } from '../../models';
 import { connect } from 'react-redux';
-import { TaskListsOrdered } from './TaskListsOrdered';
+import { IStore } from '../../models';
 import { getAllTasks, getDoneTasks, getInProgressTasks, getToDoTasks } from '../../redux/tools';
+import { TaskListsOrdered } from './TaskListsOrdered';
 
 const mapStateToProps = (state: IStore) => ({
-    tasks: state.tasks,
+    tasks: state.tasks.taskList,
     allTasksList: getAllTasks(state),
     doneTasksList: getDoneTasks(state),
     todoTasksList: getToDoTasks(state),

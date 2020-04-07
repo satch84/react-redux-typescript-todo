@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { Footer, Header, MainContent } from '../../components/';
+import { Footer } from '../../components/Footer';
+import { Header } from '../../components/Header';
+import { MainContent } from '../../components/MainContent';
 
-const Credits: React.FC = () => (
+export const Credits: React.FC = () => (
     <>
         <Header />
-            <MainContent>
-                Credits page
-            </MainContent>
+        <MainContent>
+            Credits page
+        </MainContent>
         <Footer />
     </>
 );
-
-export { Credits };

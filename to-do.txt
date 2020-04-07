@@ -1,18 +1,18 @@
-* render existing tasks
-* update a task
-* delete a task 
-* clear all tasks
-* check task does not exist yet
-* selector tasks
-* component to show tasks selectors (array as props)
-* component to show tasks lists (array as props)
-* component to show form
+Refacto :
+---------
+* delete class and use hooks + beautify
 
------- Hard tasks ------
+Core :
+------
+*/- add redux-sagas with example of data fetching
+    -> add loaders
+- add i18next
+* define node_env production and development
+* add Redux devtools
+- add React-Testing-Library (or jest ?)
+? add esLint ?
 
-* fix routing
-* persist list in local storage
-
------- DISPLAY -------
-
-- Skin the app!
+Evolution :
+-----------
+- add task selection via chechbox
+- add pagination (5 tasks per page)

@@ -1,6 +1,6 @@
-import { tasks } from './reducersTask';
+import { combineReducers } from 'redux';
 import { isLoading } from './reducersLoading';
-import {combineReducers} from 'redux';
+import { tasks } from './reducersTask';
 
 export const rootReducer = combineReducers({
     tasks,

@@ -13,13 +13,13 @@ import {
     TaskItemList
 } from './TasksList.style';
 
-interface ITasksListProps {
+export interface ITasksListProps {
     handleTaskUpdate: (uuid: string, status: string) => () => void;
     handleTaskDelete: (uuid: string) => () => void;
     tasks: InterfaceTask[],
 };
 
-const TasksList: React.FC<ITasksListProps> = ({ tasks, handleTaskDelete, handleTaskUpdate }) => (
+export const TasksList: React.FC<ITasksListProps> = ({ tasks, handleTaskDelete, handleTaskUpdate }) => (
     <TaskItemList>
         {tasks.length > 0 ?
             tasks.map((task: InterfaceTask, key: number) => {
@@ -32,7 +32,14 @@ const TasksList: React.FC<ITasksListProps> = ({ tasks, handleTaskDelete, handleT
                             <TaskContent variant="body1">{task.content}</TaskContent>
                         </TaskContentWrapper>
                         <ButtonWrapper>
-                            <Button variant="contained" color="primary" onClick={handleTaskUpdate(task.uuid, task.status)} isDisabled={task.status === TASK_STATUS_DONE}>{task.status}</Button>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                onClick={handleTaskUpdate(task.uuid, task.status)}
+                                isDisabled={task.status === TASK_STATUS_DONE}
+                            >
+                                {task.status}
+                            </Button>
                             <Fab onClick={handleTaskDelete(task.uuid)} size="small" color="secondary">
                                 <DeleteIcon />
                             </Fab>
@@ -45,5 +52,3 @@ const TasksList: React.FC<ITasksListProps> = ({ tasks, handleTaskDelete, handleT
         }
     </TaskItemList>
 );
-
-export { TasksList };

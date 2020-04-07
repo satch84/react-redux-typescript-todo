@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { NavigationItem, NavigationLink, NavigationList } from '../Navigation.style';
+import { NavigationItem, NavigationLink, NavigationList } from './Navigation.style';
 
-interface HeaderNavigationProps {
+export interface HeaderNavigationProps {
     links: { [key: string]: any[] };
 }
 
-const HeaderNavigation: React.FC<HeaderNavigationProps> = ({ links }) => (
+export const Navigation: React.FC<HeaderNavigationProps> = ({ links }) => (
     <NavigationList>
         {Object.keys(links).map((link, index) =>
             <NavigationItem key={index}>
@@ -14,5 +14,3 @@ const HeaderNavigation: React.FC<HeaderNavigationProps> = ({ links }) => (
         )}
     </NavigationList>
 );
-
-export { HeaderNavigation };

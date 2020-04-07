@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { routeHome } from '../../const/routes';
-import { HeaderNavigation } from '../Navigation'; 
+import { Navigation } from '../Navigation'; 
 import { MainHeaderStyled } from './Header.style';
 
 const headerLinks = {
@@ -12,10 +12,8 @@ const headerLinks = {
     ],
 };
 
-const Header: React.FC = () => (
+export const Header: React.FC = () => (
     <MainHeaderStyled>
-        <HeaderNavigation links={headerLinks} />
+        <Navigation links={headerLinks} />
     </MainHeaderStyled>
 );
-
-export { Header };

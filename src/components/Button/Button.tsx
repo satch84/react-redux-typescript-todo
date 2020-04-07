@@ -11,8 +11,14 @@ export interface ButtonProps {
     fullWidth?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({ isDisabled, fullWidth, variant, children, onClick, color, size }) => (
-    <MuiButton disabled={isDisabled} fullWidth={fullWidth} size={size} variant={variant} children={children} onClick={onClick} color={color} />
+export const Button: React.FC<ButtonProps> = ({ isDisabled, fullWidth, variant, children, onClick, color, size }) => (
+    <MuiButton
+        disabled={isDisabled}
+        fullWidth={fullWidth}
+        size={size}
+        variant={variant}
+        children={children}
+        onClick={onClick}
+        color={color}
+    />
 );
-
-export { Button };

@@ -1,38 +1,33 @@
 import { Grid } from '@material-ui/core';
 import * as React from 'react';
-import { Button, Footer, Header, MainContent, TaskForm, TasksList } from '../../components/';
+import { Button } from '../../components/Button';
+import { Footer } from '../../components/Footer';
+import { TaskForm } from '../../components/Form';
+import { Header } from '../../components/Header';
+import { MainContent } from '../../components/MainContent';
+import { TasksList } from '../../components/TasksList';
 import { TASK_STATUS_DONE, TASK_STATUS_IN_PROGRESS, TASK_STATUS_TODO } from '../../const/taskStatus';
 import { checkExistingTask, checkValueIsNotEmpty, createUuid, getDateAndHour } from '../../helpers';
-import { InterfaceTask, InterfaceTaskType } from '../../models';
+import { InterfaceTask } from '../../models';
 import { TaskListsOrdered } from '../TaskListsOrdered';
 import { MainContentStyled, TaskContentWrapper } from './Homepage.style';
 
-interface HomepageState {
-    value: string;
+export interface HomepageProps {
+    taskCreate: (task: InterfaceTask) => void;
+    taskDelete: (uuid: string) => void;
+    taskUpdate: (uuid: string, status: string) => void;
+    taskClear: () => void;
+    tasks: InterfaceTask[];
 };
 
-interface HomepageProps {
-    isLoading: boolean;
-    taskCreate: (task: InterfaceTask) => () => void;
-    taskDelete: (uuid: string) => () => void;
-    taskUpdate: (uuid: string, status: string) => () => void;
-    taskClear: () => () => void;
-    tasks: InterfaceTaskType;
-};
+export const Homepage: React.FC<HomepageProps> = ({ taskCreate, taskDelete, taskUpdate, taskClear, tasks }) => {
+    const [value, setValue] = React.useState(null);
 
-class Homepage extends React.Component<HomepageProps, HomepageState> {
-    constructor(props: any) {
-        super(props);
-        this.state = {
-            value: null,
-        };
-    }
+    const handleChange = (event: any) => setValue(event.target.value);
 
-    private handleChange = (event: any) => this.setState({ value: event.target.value });
-
-    private handleTaskCreate = () => {
-        const taskContent = this.state.value;
-        const taskList = this.props.tasks.taskList;
+    const handleTaskCreate = () => {
+        const taskContent = value;
+        const taskList = tasks;
 
         if (checkExistingTask(taskContent, taskList) && checkValueIsNotEmpty(taskContent)) {  
             const task = {
@@ -41,47 +36,44 @@ class Homepage extends React.Component<HomepageProps, HomepageState> {
                 content: taskContent,
                 status: TASK_STATUS_TODO,
             }
-            this.props.taskCreate(task);
+            taskCreate(task);
         }
     }
 
-    private handleTaskUpdate = (uuid: string, status: string) => () => {
-        if (status === TASK_STATUS_TODO) {
-            status = TASK_STATUS_IN_PROGRESS;
+    const handleTaskUpdate = (uuid: string, status: string) => () => {
+        switch (status) {
+            case TASK_STATUS_TODO:
+                status = TASK_STATUS_IN_PROGRESS;
+                break;
+            case TASK_STATUS_IN_PROGRESS:
+                status = TASK_STATUS_DONE;
+                break;
+            case TASK_STATUS_DONE:
+            default:
+                return;
         }
-        else if (status === TASK_STATUS_IN_PROGRESS) {
-            status = TASK_STATUS_DONE;
-        }
-        else if (status === TASK_STATUS_DONE) {
-            return false;
-        }
-        this.props.taskUpdate(uuid, status);
+        taskUpdate(uuid, status);
     };
 
-    private handleTaskDelete = (uuid: string) => () => this.props.taskDelete(uuid);
+    const handleTaskDelete = (uuid: string) => () => taskDelete(uuid);
 
-    public render() {
-        const taskList = this.props.tasks.taskList;
-        return (
-            <MainContentStyled>
-                <Header />
-                    <MainContent>
-                        <Grid container={true}>
-                            <TaskContentWrapper item={true} xs={12} sm={6}>
-                                <TasksList tasks={taskList} handleTaskDelete={this.handleTaskDelete} handleTaskUpdate={this.handleTaskUpdate} />
-                            </TaskContentWrapper>
-                            <TaskContentWrapper item={true} xs={12} sm={6}>
-                                <TaskForm value={this.state.value} handleChange={this.handleChange} handleTaskCreate={this.handleTaskCreate} />
-                                <TaskListsOrdered />
-                                {taskList.length > 0 && <Button color="primary" variant="contained" onClick={this.props.taskClear}>Clear tasks list</Button>}
-                            </TaskContentWrapper>
-                        </Grid>
-                    </MainContent>
-                <Footer />
-            </MainContentStyled>
-        );
-    };
-    
+    const taskList = tasks;
+    return (
+        <MainContentStyled>
+            <Header />
+            <MainContent>
+                <Grid container={true}>
+                    <TaskContentWrapper item={true} xs={12} sm={6}>
+                        <TasksList tasks={taskList} handleTaskDelete={handleTaskDelete} handleTaskUpdate={handleTaskUpdate} />
+                    </TaskContentWrapper>
+                    <TaskContentWrapper item={true} xs={12} sm={6}>
+                        <TaskForm value={value} handleChange={handleChange} handleTaskCreate={handleTaskCreate} />
+                        <TaskListsOrdered />
+                        {taskList.length > 0 && <Button color="primary" variant="contained" onClick={taskClear}>Clear tasks list</Button>}
+                    </TaskContentWrapper>
+                </Grid>
+            </MainContent>
+            <Footer />
+        </MainContentStyled>
+    );
 };
-
-export { Homepage };
