@@ -1,6 +1,8 @@
 Refacto :
 ---------
 * delete class and use hooks + beautify
+* delete useless payload object from actions
+- delete tasklist entry from store
 
 Core :
 ------
@@ -11,6 +13,7 @@ Core :
 * add Redux devtools
 - add React-Testing-Library (or jest ?)
 ? add esLint ?
+- skin the app
 
 Evolution :
 -----------

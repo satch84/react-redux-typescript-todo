@@ -12,24 +12,16 @@ export interface InterfaceTaskType {
 } 
 
 export interface ICreateTaskAction extends IAction {
-    payload: {
-        task: InterfaceTask
-    };
+    task: InterfaceTask
 }
 
 export interface IDeleteTaskAction extends IAction {
-    payload: {
-        uuid: string;
-    };
+    uuid: string;
 }
 
 export interface IUpdateTaskAction extends IAction {
-    payload: {
-        uuid: string;
-        status: string;
-    };
+    uuid: string;
+    status: string;
 }
 
-export interface IClearTaskAction extends IAction {
-    payload: null;
-}
+export interface IClearTaskAction extends IAction {}

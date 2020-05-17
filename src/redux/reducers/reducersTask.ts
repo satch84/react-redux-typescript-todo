@@ -8,7 +8,7 @@ export const tasks = (state = initialState.tasks, action: IActionTypes)   => {
     switch (type) {
         case TASK__CREATE:
             const {
-                payload: { task },
+                task,
             } = action as ICreateTaskAction;
 
             return {
@@ -18,7 +18,7 @@ export const tasks = (state = initialState.tasks, action: IActionTypes)   => {
 
         case TASK__UPDATE:
             const {
-                payload: { uuid, status },
+                uuid, status,
             } = action as IUpdateTaskAction;
 
             return {
@@ -30,7 +30,7 @@ export const tasks = (state = initialState.tasks, action: IActionTypes)   => {
 
         case TASK__DELETE: {
             const {
-                payload: { uuid },
+                uuid,
             } = action as IDeleteTaskAction;
 
             return {
