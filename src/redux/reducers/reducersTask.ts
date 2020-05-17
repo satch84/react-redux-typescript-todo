@@ -3,47 +3,39 @@ import { IActionTypes, ICreateTaskAction, IDeleteTaskAction, IUpdateTaskAction }
 import { initialState } from '../store/initialState';
 
 export const tasks = (state = initialState.tasks, action: IActionTypes)   => {
-    const { type } = action;
-
-    switch (type) {
+    switch (action.type) {
         case TASK__CREATE:
             const {
                 task,
             } = action as ICreateTaskAction;
 
-            return {
+            return [
                 ...state,
-                taskList: [...state.taskList, task]
-            };
+                task,
+            ];
 
         case TASK__UPDATE:
             const {
                 uuid, status,
             } = action as IUpdateTaskAction;
 
-            return {
-                ...state,
-                taskList: state.taskList.map(task => task.uuid === uuid ?
+            return [
+                ...state.map(
+                    task => task.uuid === uuid ?
                     { ...task, status: status } : task
-                )
-            };
+                ),
+            ];
 
         case TASK__DELETE: {
             const {
                 uuid,
             } = action as IDeleteTaskAction;
 
-            return {
-                ...state,
-                taskList: state.taskList.filter( task => task.uuid !== uuid )
-            };
+            return state.filter(task => task.uuid !== uuid);
         } 
 
         case TASK__CLEAR:
-            return {
-                ...state,
-                taskList: []
-            };
+            return [];
 
         default:
             return state;

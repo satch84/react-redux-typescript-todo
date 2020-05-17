@@ -1,6 +1,6 @@
-import { InterfaceTaskType } from './interfaceTask';
+import { InterfaceTask } from './interfaceTask';
 
 export interface IStore {
-    tasks: InterfaceTaskType,
+    tasks: InterfaceTask[],
     isLoading: boolean,
 };

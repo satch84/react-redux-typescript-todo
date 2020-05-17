@@ -4,7 +4,7 @@ import { getAllTasks, getDoneTasks, getInProgressTasks, getToDoTasks } from '../
 import { TaskListsOrdered } from './TaskListsOrdered';
 
 const mapStateToProps = (state: IStore) => ({
-    tasks: state.tasks.taskList,
+    tasks: state.tasks,
     allTasksList: getAllTasks(state),
     doneTasksList: getDoneTasks(state),
     todoTasksList: getToDoTasks(state),

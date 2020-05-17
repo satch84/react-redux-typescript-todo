@@ -7,10 +7,6 @@ export interface InterfaceTask {
     status: string;
 };
 
-export interface InterfaceTaskType {
-    taskList: InterfaceTask[];
-} 
-
 export interface ICreateTaskAction extends IAction {
     task: InterfaceTask
 }

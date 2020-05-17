@@ -1,5 +1,5 @@
-import { InterfaceTaskType } from './interfaceTask';
+import { InterfaceTask } from './interfaceTask';
 
 export interface ISerializedState {
-    tasks: InterfaceTaskType;
+    tasks: InterfaceTask[];
 }

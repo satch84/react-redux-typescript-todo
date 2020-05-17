@@ -10,7 +10,7 @@ import {
 import { Homepage } from './Homepage';
 
 const mapStateToProps = (state: IStore) => ({
-    tasks: state.tasks.taskList,
+    tasks: state.tasks,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
