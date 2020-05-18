@@ -3,7 +3,7 @@ import * as React from 'react';
 import { InterfaceTask } from '../../models';
 import { TasksListItem, TasksListTitle } from './TaskListsOrdered.style';
 
-export interface ITaskListsOrderedProps {
+export interface TaskListsOrderedProps {
     allTasksList: [],
     doneTasksList: [],
     todoTasksList: [],
@@ -11,7 +11,7 @@ export interface ITaskListsOrderedProps {
     tasks: InterfaceTask[];
 };
 
-export const TaskListsOrdered: React.FC<ITaskListsOrderedProps> = ({ allTasksList, doneTasksList, todoTasksList, inProgressTasksList, tasks }) => {
+export const TaskListsOrdered: React.FC<TaskListsOrderedProps> = ({ allTasksList, doneTasksList, todoTasksList, inProgressTasksList, tasks }) => {
     return(
         <>
         {tasks.length > 0 &&

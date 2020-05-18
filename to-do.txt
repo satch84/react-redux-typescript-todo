@@ -9,16 +9,21 @@ Core :
 */- add redux-sagas with example of data fetching
     -> add loaders
 - add i18next
-* define node_env production and development
+* define node_env to development
 * add Redux devtools
-- add React-Testing-Library (or jest ?)
+* add React-Testing-Library and Jest
 ? add esLint ?
+
+Design :
+--------
+- skin the app
+    => add modal when task exists / add an empty task and replace bad alerts
+
+Unit tests :
+------------
+- complete full coverage
 
 Evolution :
 -----------
 - add task selection via chechbox
 - add pagination (5 tasks per page)
-
-Design :
---------
-- skin the app

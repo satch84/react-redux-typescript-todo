@@ -2,13 +2,13 @@ import * as React from 'react';
 import { Button, Textfield } from '../../';
 import { FormTitle, FormWrapper } from './TaskForm.style'; 
 
-export interface ITaskFormProps {
+export interface TaskFormProps {
     handleChange: (event: any) => void;
     handleTaskCreate: () => void;
     value: string;
 }
 
-export const TaskForm: React.FC<ITaskFormProps> = ({ handleChange, handleTaskCreate, value }) => (
+export const TaskForm: React.FC<TaskFormProps> = ({ handleChange, handleTaskCreate, value }) => (
     <FormWrapper>
         <FormTitle variant="h3" color="primary">Manage ToDo list:</FormTitle>
         <form name='to_do_list'>

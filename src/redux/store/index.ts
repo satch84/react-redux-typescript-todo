@@ -28,6 +28,7 @@ export const configureStore = () => {
         );
     }
 
+    /** to be replaced? */
     store.subscribe(() => {
         saveState({
             tasks: store.getState().tasks

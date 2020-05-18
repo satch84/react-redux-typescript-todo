@@ -1,7 +1,7 @@
 import { TextField as MuiTextField } from '@material-ui/core';
 import * as React from 'react';
 
-export interface TextfieldProp {
+export interface TextfieldProps {
     hasError?: boolean;
     isDisabled?: boolean;
     isRequired?: boolean;
@@ -11,7 +11,7 @@ export interface TextfieldProp {
     fullWidth: boolean;
 }
 
-export const Textfield: React.FC<TextfieldProp> = ({ hasError, fullWidth, isDisabled, isRequired, label, value, onChange }) => (
+export const Textfield: React.FC<TextfieldProps> = ({ hasError, fullWidth, isDisabled, isRequired, label, value, onChange }) => (
     <MuiTextField
         variant='outlined'
         fullWidth={fullWidth}

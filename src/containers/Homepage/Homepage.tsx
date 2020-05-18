@@ -25,19 +25,16 @@ export const Homepage: React.FC<HomepageProps> = ({ taskCreate, taskDelete, task
 
     const handleChange = (event: any) => setValue(event.target.value);
 
-    const handleTaskCreate = () => {
-        const taskContent = value;
-        const taskList = tasks;
+    const task = {
+        uuid: createUuid(),
+        date: getDateAndHour(),
+        content: value,
+        status: TASK_STATUS_TODO,
+    }
 
-        if (checkExistingTask(taskContent, taskList) && checkValueIsNotEmpty(taskContent)) {  
-            const task = {
-                uuid: createUuid(),
-                date: getDateAndHour(),
-                content: taskContent,
-                status: TASK_STATUS_TODO,
-            }
+    const handleTaskCreate = () => {
+        checkExistingTask(value, tasks) && checkValueIsNotEmpty(value) &&
             taskCreate(task);
-        }
     }
 
     const handleTaskUpdate = (uuid: string, status: string) => () => {
@@ -57,19 +54,31 @@ export const Homepage: React.FC<HomepageProps> = ({ taskCreate, taskDelete, task
 
     const handleTaskDelete = (uuid: string) => () => taskDelete(uuid);
 
-    const taskList = tasks;
     return (
         <MainContentStyled>
             <Header />
             <MainContent>
                 <Grid container={true}>
                     <TaskContentWrapper item={true} xs={12} sm={6}>
-                        <TasksList tasks={taskList} handleTaskDelete={handleTaskDelete} handleTaskUpdate={handleTaskUpdate} />
+                        <TasksList tasks={tasks} handleTaskDelete={handleTaskDelete} handleTaskUpdate={handleTaskUpdate} />
                     </TaskContentWrapper>
                     <TaskContentWrapper item={true} xs={12} sm={6}>
-                        <TaskForm value={value} handleChange={handleChange} handleTaskCreate={handleTaskCreate} />
+                        <TaskForm
+                            value={value}
+                            handleChange={handleChange}
+                            handleTaskCreate={handleTaskCreate}
+                        />
                         <TaskListsOrdered />
-                        {taskList.length > 0 && <Button color="primary" variant="contained" onClick={taskClear}>Clear tasks list</Button>}
+                        {tasks.length > 0 && 
+                            <Button
+                                color="primary"
+                                variant="contained"
+                                onClick={taskClear}
+                                data-testid="clear-button"
+                            >
+                                Clear tasks list
+                            </Button>
+                        }
                     </TaskContentWrapper>
                 </Grid>
             </MainContent>
