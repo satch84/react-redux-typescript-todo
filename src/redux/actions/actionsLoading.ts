@@ -1,10 +1,10 @@
 import { LOADING__START, LOADING__STOP } from '../../const/actions';
-import { ILoadingStartAction, ILoadingStopAction } from '../../models/InterfaceLoading';
+import { LoadingStartAction, LoadingStopAction } from '../../models/InterfaceLoading';
 
-export const loadingStartAction = (): ILoadingStartAction => ({
+export const loadingStartAction = (): LoadingStartAction => ({
     type: LOADING__START,
 });
 
-export const loadingStopAction = (): ILoadingStopAction => ({
+export const loadingStopAction = (): LoadingStopAction => ({
     type: LOADING__STOP,
 });

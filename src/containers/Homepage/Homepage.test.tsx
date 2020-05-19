@@ -6,15 +6,19 @@ import { configureStore } from '../../redux/store';
 import { theme } from '../../styledComponents/theme';
 import { Homepage, HomepageProps } from "./Homepage";
 
-const mockedTaskCreate = jest.fn();
-const mockedTaskDelete = jest.fn();
-const mockedTaskUpdate = jest.fn();
+const mockedCheckTaskCreate = jest.fn();
+const mockedCheckTaskDelete = jest.fn();
+const mockedCheckTaskUpdate = jest.fn();
 const mockedTaskClear = jest.fn();
+const mockedHideModal = jest.fn();
 
 let props: HomepageProps = {
-    taskCreate: () => mockedTaskCreate,
-    taskDelete: () => mockedTaskDelete,
-    taskUpdate: () => mockedTaskUpdate,
+    isModalOpened: true,
+    modalType: 'modalType',
+    checkTaskCreate: () => mockedCheckTaskCreate,
+    checkTaskDelete: () => mockedCheckTaskDelete,
+    checkTaskUpdate: () => mockedCheckTaskUpdate,
+    hideModal: () => mockedHideModal,
     taskClear: () => mockedTaskClear,
     tasks: [
         {

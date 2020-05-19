@@ -1,17 +1,13 @@
-import {
-    IClearTaskAction,
-    ICreateTaskAction, 
-    IDeleteTaskAction, 
-    IUpdateTaskAction 
-} from './interfaceTask';
+import { LoadingAction } from './interfaceLoading';
+import { ModalActions } from './interfaceModal'; 
+import { TaskActions } from './InterfaceTask';
 
 export interface IAction {
     type: string;
 }
 
 export type IActionTypes = 
-    ICreateTaskAction
-    | IClearTaskAction
-    | IDeleteTaskAction
-    | IUpdateTaskAction;
+    TaskActions
+    | ModalActions
+    | LoadingAction;
 

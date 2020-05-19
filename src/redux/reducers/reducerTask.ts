@@ -1,5 +1,5 @@
 import { TASK__CLEAR, TASK__CREATE, TASK__DELETE, TASK__UPDATE } from '../../const/actions';
-import { IActionTypes, ICreateTaskAction, IDeleteTaskAction, IUpdateTaskAction } from '../../models';
+import { CreateTaskAction, DeleteTaskAction, IActionTypes, UpdateTaskAction } from '../../models';
 import { initialState } from '../store/initialState';
 
 export const tasks = (state = initialState.tasks, action: IActionTypes)   => {
@@ -7,7 +7,7 @@ export const tasks = (state = initialState.tasks, action: IActionTypes)   => {
         case TASK__CREATE:
             const {
                 task,
-            } = action as ICreateTaskAction;
+            } = action as CreateTaskAction;
 
             return [
                 ...state,
@@ -17,7 +17,7 @@ export const tasks = (state = initialState.tasks, action: IActionTypes)   => {
         case TASK__UPDATE:
             const {
                 uuid, status,
-            } = action as IUpdateTaskAction;
+            } = action as UpdateTaskAction;
 
             return [
                 ...state.map(
@@ -29,7 +29,7 @@ export const tasks = (state = initialState.tasks, action: IActionTypes)   => {
         case TASK__DELETE: {
             const {
                 uuid,
-            } = action as IDeleteTaskAction;
+            } = action as DeleteTaskAction;
 
             return state.filter(task => task.uuid !== uuid);
         } 

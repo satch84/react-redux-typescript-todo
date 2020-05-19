@@ -5,62 +5,62 @@ import { Footer } from '../../components/Footer';
 import { TaskForm } from '../../components/Form';
 import { Header } from '../../components/Header';
 import { MainContent } from '../../components/MainContent';
+import { Modal } from '../../components/Modal';
 import { TasksList } from '../../components/TasksList';
-import { TASK_STATUS_DONE, TASK_STATUS_IN_PROGRESS, TASK_STATUS_TODO } from '../../const/taskStatus';
-import { checkExistingTask, checkValueIsNotEmpty, createUuid, getDateAndHour } from '../../helpers';
 import { InterfaceTask } from '../../models';
 import { TaskListsOrdered } from '../TaskListsOrdered';
 import { MainContentStyled, TaskContentWrapper } from './Homepage.style';
 
 export interface HomepageProps {
-    taskCreate: (task: InterfaceTask) => void;
-    taskDelete: (uuid: string) => void;
-    taskUpdate: (uuid: string, status: string) => void;
+    hideModal: () => void;
+    checkTaskUpdate: (uuid: string, status: string) => void;
+    checkTaskDelete: (uuid: string) => void;
+    isModalOpened: boolean;
+    modalType: string;
+    checkTaskCreate: (taskList: InterfaceTask[], value: string) => void;
     taskClear: () => void;
     tasks: InterfaceTask[];
 };
 
-export const Homepage: React.FC<HomepageProps> = ({ taskCreate, taskDelete, taskUpdate, taskClear, tasks }) => {
+export const Homepage: React.FC<HomepageProps> = ({
+    checkTaskUpdate,
+    checkTaskDelete,
+    hideModal,
+    isModalOpened,
+    modalType,
+    taskClear,
+    checkTaskCreate,
+    tasks,
+}) => {
     const [value, setValue] = React.useState(null);
 
     const handleChange = (event: any) => setValue(event.target.value);
-
-    const task = {
-        uuid: createUuid(),
-        date: getDateAndHour(),
-        content: value,
-        status: TASK_STATUS_TODO,
-    }
-
-    const handleTaskCreate = () => {
-        checkExistingTask(value, tasks) && checkValueIsNotEmpty(value) &&
-            taskCreate(task);
-    }
-
-    const handleTaskUpdate = (uuid: string, status: string) => () => {
-        switch (status) {
-            case TASK_STATUS_TODO:
-                status = TASK_STATUS_IN_PROGRESS;
-                break;
-            case TASK_STATUS_IN_PROGRESS:
-                status = TASK_STATUS_DONE;
-                break;
-            case TASK_STATUS_DONE:
-            default:
-                return;
-        }
-        taskUpdate(uuid, status);
-    };
-
-    const handleTaskDelete = (uuid: string) => () => taskDelete(uuid);
+    const handleTaskCreate = () => checkTaskCreate(tasks, value);
+    const handleTaskUpdate = (uuid: string, status: string) => () => checkTaskUpdate(uuid, status);
+    const handleCheckTaskDelete = (uuid: string) => () => checkTaskDelete(uuid);
 
     return (
         <MainContentStyled>
+            {
+                isModalOpened &&
+                    (
+                        <Modal
+                            type={modalType}
+                            content='This action is not possible, please check you entered a value or the task does not already exists!'
+                            isOpened={isModalOpened}
+                            action={true}
+                            buttonText='Ok'
+                            onConfirm={hideModal}
+                            onCancel={hideModal}
+                            hasTitle={true}
+                        />
+                    )
+            }
             <Header />
             <MainContent>
                 <Grid container={true}>
                     <TaskContentWrapper item={true} xs={12} sm={6}>
-                        <TasksList tasks={tasks} handleTaskDelete={handleTaskDelete} handleTaskUpdate={handleTaskUpdate} />
+                        <TasksList tasks={tasks} handleTaskDelete={handleCheckTaskDelete} handleTaskUpdate={handleTaskUpdate} />
                     </TaskContentWrapper>
                     <TaskContentWrapper item={true} xs={12} sm={6}>
                         <TaskForm

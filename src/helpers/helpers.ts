@@ -14,15 +14,6 @@ export const createUuid = () => {
     return uuid.v4();
 };
 
-/** check value entered is not empty, null or undefined */
-export const checkValueIsNotEmpty = (value: string) => {
-    if (value === null || value === '' || value === undefined) {
-        alert('Please enter a task!');
-        return false;
-    }
-    return true;
-};
-
 /** check entered task does not exist yet */
 export const checkExistingTask = (taskContent: string, taskList: InterfaceTask[]) => {
     let taskExists = false;
@@ -30,7 +21,6 @@ export const checkExistingTask = (taskContent: string, taskList: InterfaceTask[]
     if (taskList.length > 0) {
         taskList.map((task: InterfaceTask, key: number) => {
             if (task.content === taskContent) {
-                alert('This task already exists!');
                 taskExists = true;
             }
         });

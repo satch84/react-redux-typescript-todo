@@ -1,4 +1,4 @@
-import { checkExistingTask, checkValueIsNotEmpty, createUuid, getDateAndHour } from "./Helpers";
+import { checkExistingTask, createUuid, getDateAndHour } from "./Helpers";
 
 const tasks = [
     {
@@ -22,10 +22,5 @@ describe('Helpers', () => {
         expect(checkExistingTask('content', tasks)).toBeFalsy();
         expect(checkExistingTask('new content', tasks)).toBeTruthy();
         expect(checkExistingTask('content', [])).toBeTruthy();
-    });
-
-    test('should check if an entered task has a value', () => {
-        expect(checkValueIsNotEmpty('value')).toBeTruthy();
-        expect(checkValueIsNotEmpty('')).toBeFalsy();
     });
 });

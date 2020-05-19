@@ -6,3 +6,4 @@ export * from './Button';
 export * from './Form';
 export * from './TasksList';
 export * from './Fab';
+export * from './Modal';

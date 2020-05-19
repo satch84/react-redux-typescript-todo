@@ -7,17 +7,20 @@ Refacto :
 Core :
 ------
 */- add redux-sagas with example of data fetching
-    -> add loaders
+    -> add loaders (modal styled with rotating icon)
 - add i18next
 * define node_env to development
 * add Redux devtools
 * add React-Testing-Library and Jest
-? add esLint ?
+- add esLint
 
 Design :
 --------
 - skin the app
-    => add modal when task exists / add an empty task and replace bad alerts
+    * add modal when task exists / add an empty task
+        -> style modal correctly + icon add next to title (warning / info)
+        * replace bad alerts...
+        * set up different modal types
 
 Unit tests :
 ------------
@@ -25,5 +28,6 @@ Unit tests :
 
 Evolution :
 -----------
+- add cancel option when deleting a task / clear all tasks
 - add task selection via chechbox
 - add pagination (5 tasks per page)

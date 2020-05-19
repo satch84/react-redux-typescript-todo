@@ -7,17 +7,32 @@ export interface InterfaceTask {
     status: string;
 };
 
-export interface ICreateTaskAction extends IAction {
-    task: InterfaceTask
+export interface CreateTaskAction extends IAction {
+    task: InterfaceTask;
 }
 
-export interface IDeleteTaskAction extends IAction {
+export interface DeleteTaskAction extends IAction {
     uuid: string;
 }
 
-export interface IUpdateTaskAction extends IAction {
+export interface UpdateTaskAction extends IAction {
     uuid: string;
     status: string;
 }
 
-export interface IClearTaskAction extends IAction {}
+export interface CheckCreateTaskAction extends IAction {
+    taskList: InterfaceTask[];
+    value: string;
+}
+
+export interface CheckUpdateTaskAction extends IAction {}
+
+export interface ClearTaskAction extends IAction {}
+
+export type TaskActions =
+    CreateTaskAction
+    | DeleteTaskAction
+    | UpdateTaskAction
+    | ClearTaskAction
+    | CheckCreateTaskAction
+    | CheckUpdateTaskAction;

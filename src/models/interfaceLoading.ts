@@ -1,7 +1,7 @@
 import { IAction } from './InterfaceAction';
 
-export interface ILoadingStartAction extends IAction {}
+export interface LoadingStartAction extends IAction {}
 
-export interface ILoadingStopAction extends IAction {}
+export interface LoadingStopAction extends IAction {}
 
-export type ILoadingAction = ILoadingStartAction | ILoadingStopAction;
+export type LoadingAction = LoadingStartAction | LoadingStopAction;

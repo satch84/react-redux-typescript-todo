@@ -1,5 +1,22 @@
-import { TASK__CLEAR, TASK__CREATE, TASK__DELETE, TASK__UPDATE } from '../../const/actions';
-import { taskClear, taskCreate, taskDelete, taskUpdate } from './actionsTask';
+import {
+    TASK__CHECK_CREATE,
+    TASK__CHECK_DELETE,
+    TASK__CHECK_UPDATE,
+    TASK__CLEAR,
+    TASK__CREATE,
+    TASK__DELETE,
+    TASK__UPDATE,
+} from '../../const/actions';
+import {
+    checkTaskCreate,
+
+    checkTaskDelete,
+    checkTaskUpdate,
+    taskClear,
+    taskCreate,
+    taskDelete,
+    taskUpdate,
+} from './actionsTask';
 
 const task = {
     content: 'content',
@@ -39,5 +56,31 @@ describe('action tasks', () => {
             status: 'new status',
          };
         expect(taskUpdate('taskUuid', 'new status')).toEqual(expectedAction);
+    });
+
+    it('should send a TASK__CHECK_CREATE action', () => {
+        const expectedAction = {
+            type: TASK__CHECK_CREATE,
+            taskList: [task],
+            value: 'value',
+        };
+        expect(checkTaskCreate([task], 'value')).toEqual(expectedAction);
+    });
+
+    it('should send a TASK__CHECK_UPDATE action', () => {
+        const expectedAction = {
+            uuid: 'taskUuid',
+            status: 'new status',
+            type: TASK__CHECK_UPDATE,
+        };
+        expect(checkTaskUpdate('taskUuid', 'new status')).toEqual(expectedAction);
+    });
+
+    it('should send a TASK__CHECK_DELETE action', () => {
+        const expectedAction = {
+            uuid: 'taskUuid',
+            type: TASK__CHECK_DELETE,
+        };
+        expect(checkTaskDelete('taskUuid')).toEqual(expectedAction);
     });
 });
