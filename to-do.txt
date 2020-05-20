@@ -17,10 +17,11 @@ Core :
 Design :
 --------
 - skin the app
-    * add modal when task exists / add an empty task
+    * add modal when task exists / add an empty task / delete a task
         -> style modal correctly + icon add next to title (warning / info)
         * replace bad alerts...
         * set up different modal types
+    * add modal cancel / confirmation flow
 
 Unit tests :
 ------------

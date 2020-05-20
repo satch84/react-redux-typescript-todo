@@ -5,32 +5,34 @@ import { Footer } from '../../components/Footer';
 import { TaskForm } from '../../components/Form';
 import { Header } from '../../components/Header';
 import { MainContent } from '../../components/MainContent';
-import { Modal } from '../../components/Modal';
 import { TasksList } from '../../components/TasksList';
 import { InterfaceTask } from '../../models';
+import { Modal } from '../Modal';
 import { TaskListsOrdered } from '../TaskListsOrdered';
 import { MainContentStyled, TaskContentWrapper } from './Homepage.style';
 
 export interface HomepageProps {
-    hideModal: () => void;
     checkTaskUpdate: (uuid: string, status: string) => void;
     checkTaskDelete: (uuid: string) => void;
     isModalOpened: boolean;
-    modalType: string;
     checkTaskCreate: (taskList: InterfaceTask[], value: string) => void;
-    taskClear: () => void;
+    checkTaskClear: () => void;
     tasks: InterfaceTask[];
+    modalType: string;
+    cancelModal: () => void;
+    confirmModal: () => void;
 };
 
 export const Homepage: React.FC<HomepageProps> = ({
     checkTaskUpdate,
     checkTaskDelete,
-    hideModal,
     isModalOpened,
-    modalType,
-    taskClear,
+    checkTaskClear,
     checkTaskCreate,
     tasks,
+    modalType,
+    cancelModal,
+    confirmModal,
 }) => {
     const [value, setValue] = React.useState(null);
 
@@ -41,21 +43,7 @@ export const Homepage: React.FC<HomepageProps> = ({
 
     return (
         <MainContentStyled>
-            {
-                isModalOpened &&
-                    (
-                        <Modal
-                            type={modalType}
-                            content='This action is not possible, please check you entered a value or the task does not already exists!'
-                            isOpened={isModalOpened}
-                            action={true}
-                            buttonText='Ok'
-                            onConfirm={hideModal}
-                            onCancel={hideModal}
-                            hasTitle={true}
-                        />
-                    )
-            }
+            {isModalOpened && <Modal type={modalType} onCancel={cancelModal} onConfirm={confirmModal} />}
             <Header />
             <MainContent>
                 <Grid container={true}>
@@ -73,7 +61,7 @@ export const Homepage: React.FC<HomepageProps> = ({
                             <Button
                                 color="primary"
                                 variant="contained"
-                                onClick={taskClear}
+                                onClick={checkTaskClear}
                                 data-testid="clear-button"
                             >
                                 Clear tasks list

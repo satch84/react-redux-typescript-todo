@@ -1,4 +1,5 @@
 import {
+    TASK__CHECK_CLEAR,
     TASK__CHECK_CREATE,
     TASK__CHECK_DELETE,
     TASK__CHECK_UPDATE,
@@ -8,7 +9,6 @@ import {
     TASK__UPDATE,
 } from '../../const/actions';
 import {
-    ClearTaskAction,
     CreateTaskAction,
     DeleteTaskAction,
     InterfaceTask,
@@ -32,6 +32,10 @@ export const checkTaskDelete = (uuid: string): DeleteTaskAction => ({
     type: TASK__CHECK_DELETE
 });
 
+export const checkTaskClear = () => ({
+    type: TASK__CHECK_CLEAR
+});
+
 export const taskCreate = (task: InterfaceTask): CreateTaskAction => ({
     task,
     type: TASK__CREATE,
@@ -48,6 +52,6 @@ export const taskDelete = (uuid: string): DeleteTaskAction => ({
     type: TASK__DELETE,
 });
 
-export const taskClear = (): ClearTaskAction => ({
+export const taskClear = () => ({
     type: TASK__CLEAR,
 });

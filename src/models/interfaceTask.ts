@@ -25,14 +25,8 @@ export interface CheckCreateTaskAction extends IAction {
     value: string;
 }
 
-export interface CheckUpdateTaskAction extends IAction {}
-
-export interface ClearTaskAction extends IAction {}
-
 export type TaskActions =
     CreateTaskAction
     | DeleteTaskAction
     | UpdateTaskAction
-    | ClearTaskAction
-    | CheckCreateTaskAction
-    | CheckUpdateTaskAction;
+    | CheckCreateTaskAction;

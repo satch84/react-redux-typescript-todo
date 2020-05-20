@@ -9,17 +9,18 @@ import { Homepage, HomepageProps } from "./Homepage";
 const mockedCheckTaskCreate = jest.fn();
 const mockedCheckTaskDelete = jest.fn();
 const mockedCheckTaskUpdate = jest.fn();
-const mockedTaskClear = jest.fn();
-const mockedHideModal = jest.fn();
+const mockedCheckTaskClear = jest.fn();
+const mockedCancelModal = jest.fn();
+const mockedConfirmModal = jest.fn();
 
 let props: HomepageProps = {
     isModalOpened: true,
-    modalType: 'modalType',
     checkTaskCreate: () => mockedCheckTaskCreate,
     checkTaskDelete: () => mockedCheckTaskDelete,
     checkTaskUpdate: () => mockedCheckTaskUpdate,
-    hideModal: () => mockedHideModal,
-    taskClear: () => mockedTaskClear,
+    checkTaskClear: () => mockedCheckTaskClear,
+    cancelModal: () => mockedCancelModal,
+    confirmModal: () => mockedConfirmModal,
     tasks: [
         {
             content: 'content',
@@ -27,7 +28,8 @@ let props: HomepageProps = {
             status: 'to do',
             uuid: 'uuid',
         }
-    ]
+    ],
+    modalType: 'type',
 };
 
 const { store } = configureStore();

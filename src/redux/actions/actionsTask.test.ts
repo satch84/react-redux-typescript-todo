@@ -1,4 +1,5 @@
 import {
+    TASK__CHECK_CLEAR,
     TASK__CHECK_CREATE,
     TASK__CHECK_DELETE,
     TASK__CHECK_UPDATE,
@@ -8,8 +9,8 @@ import {
     TASK__UPDATE,
 } from '../../const/actions';
 import {
+    checkTaskClear,
     checkTaskCreate,
-
     checkTaskDelete,
     checkTaskUpdate,
     taskClear,
@@ -82,5 +83,12 @@ describe('action tasks', () => {
             type: TASK__CHECK_DELETE,
         };
         expect(checkTaskDelete('taskUuid')).toEqual(expectedAction);
+    });
+
+    it('should send a TASK__CHECK_CLEAR action', () => {
+        const expectedAction = {
+            type: TASK__CHECK_CLEAR,
+        };
+        expect(checkTaskClear()).toEqual(expectedAction);
     });
 });
