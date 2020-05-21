@@ -1,5 +1,5 @@
 import { Button as MuiButton } from '@material-ui/core';
-import * as React from 'react';
+import React from 'react';
 
 export interface ButtonProps {
     children: string;

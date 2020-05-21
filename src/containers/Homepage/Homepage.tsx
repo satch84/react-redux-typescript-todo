@@ -1,5 +1,5 @@
 import { Grid } from '@material-ui/core';
-import * as React from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';

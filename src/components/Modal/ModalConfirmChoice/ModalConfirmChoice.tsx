@@ -1,5 +1,5 @@
 import { Modal as MuiModal } from '@material-ui/core';
-import * as React from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../Button';
 

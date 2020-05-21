@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { NavigationItem, NavigationLink, NavigationList } from './Navigation.style';
 
 export interface NvigationProps {

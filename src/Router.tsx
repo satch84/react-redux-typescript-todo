@@ -35,7 +35,7 @@ const TodoApp = () => {
   return(
     <>
       <GlobalStyle />
-      <I18nextProvider i18n={getI18n()}>
+      <I18nextProvider i18n={i18n}>
         <Provider store={store}>
           <ThemeProvider theme={theme}>
             <Router history={history}>

@@ -1,6 +1,6 @@
 import { Typography } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
-import * as React from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Fab } from '../';
 import { TASK_STATUS_DONE } from '../../const/taskStatus';

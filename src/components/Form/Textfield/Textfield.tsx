@@ -1,5 +1,5 @@
 import { TextField as MuiTextField } from '@material-ui/core';
-import * as React from 'react';
+import React from 'react';
 
 export interface TextfieldProps {
     hasError?: boolean;

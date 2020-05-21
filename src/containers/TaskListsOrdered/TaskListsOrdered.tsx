@@ -1,5 +1,5 @@
 import { Typography } from '@material-ui/core';
-import * as React from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { InterfaceTask } from '../../models';
 import { TasksListItem, TasksListTitle } from './TaskListsOrdered.style';

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { ModalConfirmChoice, ModalEmptyValue, ModalTaskExists } from '../../components/Modal';
 import { MODAL__CONFIRM_CHOICE, MODAL__EMPTY_VALUE, MODAL__TASK_EXISTS } from '../../const/modals';
 

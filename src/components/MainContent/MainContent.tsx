@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { MainContentStyled } from './MainContent.style';
 
 export interface MainContentProps {
