@@ -1,5 +1,6 @@
 import { Grid } from '@material-ui/core';
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 import { TaskForm } from '../../components/Form';
@@ -34,6 +35,8 @@ export const Homepage: React.FC<HomepageProps> = ({
     cancelModal,
     confirmModal,
 }) => {
+    const { t } = useTranslation();
+
     const [value, setValue] = React.useState(null);
 
     const handleChange = (event: any) => setValue(event.target.value);
@@ -62,7 +65,7 @@ export const Homepage: React.FC<HomepageProps> = ({
                                 onClick={checkTaskClear}
                                 data-testid="clear-button"
                             >
-                                Clear tasks list
+                                {t('clear_task_list')}
                             </Button>
                         }
                     </TaskContentWrapper>

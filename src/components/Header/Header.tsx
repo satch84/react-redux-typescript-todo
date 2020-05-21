@@ -1,19 +1,24 @@
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
 import { routeHome } from '../../const/routes';
 import { Navigation } from '../Navigation'; 
 import { MainHeaderStyled } from './Header.style';
 
-const headerLinks = {
-    'accueil': [
-        { 
-            'label': 'ToDo App',
-            'url': routeHome,
-        },
-    ],
-};
+export const Header: React.FC = () => {
+    const { t } = useTranslation();
 
-export const Header: React.FC = () => (
-    <MainHeaderStyled>
-        <Navigation links={headerLinks} />
-    </MainHeaderStyled>
-);
+    const headerLinks = {
+        'accueil': [
+            {
+                'label': t('to_do_app'),
+                'url': routeHome,
+            },
+        ],
+    };
+
+    return(
+        <MainHeaderStyled>
+            <Navigation links={headerLinks} />
+        </MainHeaderStyled>
+    );
+};

@@ -34,5 +34,6 @@ Unit tests :
 Evolution :
 -----------
 * add cancel option when deleting a task / clear all tasks
+- add language selection from the store (+ dropdown in front)
 - add task selection via chechbox
 - add pagination (5 tasks per page)

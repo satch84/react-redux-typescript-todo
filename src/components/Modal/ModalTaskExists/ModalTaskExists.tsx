@@ -1,5 +1,6 @@
 import { Modal as MuiModal } from '@material-ui/core';
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '../../Button';
 
 export interface ModalTaskExistsProps {
@@ -7,14 +8,16 @@ export interface ModalTaskExistsProps {
 }
 
 export const ModalTaskExists: React.FC<ModalTaskExistsProps> = ({ onConfirm }) => {
+    const { t } = useTranslation();  
+
     const body = (
         <div>
-            <h2>Attention</h2>
+            <h2>{t('attention')}</h2>
             <div>
-                This task already exists, please enter a new task to the list!
+                {t('modal_task_exists_message')}
             </div>
             <div data-testid='modal-action-button-container'>
-                <Button color='primary' variant='contained' onClick={onConfirm}>OK</Button>
+                <Button color='primary' variant='contained' onClick={onConfirm}>{t('ok')}</Button>
             </div>
         </div>
     );

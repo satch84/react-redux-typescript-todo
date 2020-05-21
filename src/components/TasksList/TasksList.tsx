@@ -1,6 +1,7 @@
 import { Typography } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button, Fab } from '../';
 import { TASK_STATUS_DONE } from '../../const/taskStatus';
 import { InterfaceTask } from '../../models';
@@ -20,6 +21,7 @@ export interface TasksListProps {
 };
 
 export const TasksList: React.FC<TasksListProps> = ({ tasks, taskDelete, taskUpdate }) => {
+    const { t } = useTranslation();
     const handleTaskUpdate = (uuid: string, status: string) => () => taskUpdate(uuid, status);
     const handleTaskDelete = (uuid: string) => () => taskDelete(uuid);
 
@@ -58,7 +60,7 @@ export const TasksList: React.FC<TasksListProps> = ({ tasks, taskDelete, taskUpd
                     );
                 })
                 :
-                <TaskItem>No task has been created yet!</TaskItem>
+                <TaskItem>{t('no_task_created')}</TaskItem>
             }
         </TaskItemList>
     );

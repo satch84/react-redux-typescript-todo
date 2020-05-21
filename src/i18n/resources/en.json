@@ -1,0 +1,24 @@
+{
+  "en": {
+    "translation": {
+      "to_do_app": "ToDo App",
+      "credits": "Credits",
+      "manage_to_do_list": "Manage ToDo list:",
+      "add_task": "Add a task",
+      "confirm_action": "Do you confirm?",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "ok": "Ok",
+      "modal_empty_value_message": "Please enter a value in order to add a task to the list!",
+      "modal_task_exists_message": "This task already exists, please enter a new task to the list!",
+      "no_task_created": "No task has been created yet! ",
+      "clear_task_list": "Clear task list",
+      "list_stats": "Stats list:",
+      "total_tasks": "Total tasks:",
+      "todo_tasks": "ToDo tasks:",
+      "progress_tasks": "In progress tasks:",
+      "done_tasks": "Done tasks:",
+      "type_task": "Type a task"
+    }
+  }
+}

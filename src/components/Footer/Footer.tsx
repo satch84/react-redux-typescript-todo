@@ -1,25 +1,30 @@
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
 import { routeCredits, routeHome } from '../../const/routes';
 import { Navigation } from '../Navigation'; 
 import { MainFooterStyled } from './Footer.style';
 
-const footerLinks = {
-    'home': [
-        { 
-            'label': 'ToDo App',
-            'url': routeHome,
-        },
-    ],
-    'credits': [
-        {
-            'label': 'Credits',
-            'url': routeCredits,
-        },
-    ],
-};
+export const Footer: React.FC = () => {
+    const { t } = useTranslation();
 
-export const Footer: React.FC = () => (
-    <MainFooterStyled>
-        <Navigation links={footerLinks} />
-    </MainFooterStyled>
-);
+    const footerLinks = {
+        'home': [
+            {
+                'label': t('to_do_app'),
+                'url': routeHome,
+            },
+        ],
+        'credits': [
+            {
+                'label': t('credits'),
+                'url': routeCredits,
+            },
+        ],
+    };
+
+    return(
+        <MainFooterStyled>
+            <Navigation links={footerLinks} />
+        </MainFooterStyled>
+    );
+};
