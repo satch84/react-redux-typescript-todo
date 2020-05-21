@@ -1,8 +1,8 @@
 import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleWare from 'redux-saga';
-import { NODE_ENV } from '../../const/environment'; 
-import { loadSerializedState, saveState } from '../../tools';
+import { config } from '../../config/config'; 
+import { loadSerializedState } from '../../tools';
 import { rootReducer } from '../reducers';
 import { rootSaga } from '../sagas';
 
@@ -11,7 +11,7 @@ export const configureStore = () => {
 
     let store: any;
 
-    if (NODE_ENV === 'development') {
+    if (config.env === 'development') {
         /** get redux dev-tools for development environment */
         const composeEnhancers = composeWithDevTools({ name: 'todoApp' });
         store = createStore(
@@ -19,22 +19,15 @@ export const configureStore = () => {
             loadSerializedState(),
             composeEnhancers(applyMiddleware(sagaMiddleware)),
         );
-    }
-    else {
-        store = createStore(
-            rootReducer,
-            loadSerializedState(),
-            applyMiddleware(sagaMiddleware),
-        );
+        sagaMiddleware.run(rootSaga);
+        return { store };
     }
 
-    /** to be replaced? */
-    store.subscribe(() => {
-        saveState({
-            tasks: store.getState().tasks
-        });
-    });
-
-    sagaMiddleware.run(rootSaga)
+    store = createStore(
+        rootReducer,
+        loadSerializedState(),
+        applyMiddleware(sagaMiddleware),
+    );
+    sagaMiddleware.run(rootSaga);
     return { store };
 }

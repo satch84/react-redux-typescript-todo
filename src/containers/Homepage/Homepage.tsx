@@ -37,9 +37,6 @@ export const Homepage: React.FC<HomepageProps> = ({
     const [value, setValue] = React.useState(null);
 
     const handleChange = (event: any) => setValue(event.target.value);
-    const handleTaskCreate = () => checkTaskCreate(tasks, value);
-    const handleTaskUpdate = (uuid: string, status: string) => () => checkTaskUpdate(uuid, status);
-    const handleCheckTaskDelete = (uuid: string) => () => checkTaskDelete(uuid);
 
     return (
         <MainContentStyled>
@@ -48,13 +45,14 @@ export const Homepage: React.FC<HomepageProps> = ({
             <MainContent>
                 <Grid container={true}>
                     <TaskContentWrapper item={true} xs={12} sm={6}>
-                        <TasksList tasks={tasks} handleTaskDelete={handleCheckTaskDelete} handleTaskUpdate={handleTaskUpdate} />
+                        <TasksList tasks={tasks} taskDelete={checkTaskDelete} taskUpdate={checkTaskUpdate} />
                     </TaskContentWrapper>
                     <TaskContentWrapper item={true} xs={12} sm={6}>
                         <TaskForm
                             value={value}
-                            handleChange={handleChange}
-                            handleTaskCreate={handleTaskCreate}
+                            onChange={handleChange}
+                            tasks={tasks}
+                            taskCreate={checkTaskCreate}
                         />
                         <TaskListsOrdered />
                         {tasks.length > 0 && 

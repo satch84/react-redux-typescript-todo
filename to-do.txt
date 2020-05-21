@@ -3,6 +3,8 @@ Refacto :
 * delete class and use hooks + beautify
 * delete useless payload object from actions
 * delete tasklist entry from store
+* multiple modal management
+- store provider for test in an util function
 
 Core :
 ------
@@ -26,9 +28,11 @@ Design :
 Unit tests :
 ------------
 - complete full coverage
+* fix strange error with container test files (ok with components files)
+    => yarn jest --clearCache
 
 Evolution :
 -----------
-- add cancel option when deleting a task / clear all tasks
+* add cancel option when deleting a task / clear all tasks
 - add task selection via chechbox
 - add pagination (5 tasks per page)

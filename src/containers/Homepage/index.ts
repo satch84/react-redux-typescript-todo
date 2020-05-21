@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
-import { InterfaceTask, IStore } from '../../models';
+import { IStore } from '../../models';
 import {
     cancelModal,
     checkTaskClear,
@@ -17,14 +16,14 @@ const mapStateToProps = (state: IStore) => ({
     tasks: state.tasks,
 });
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-    cancelModal: () => dispatch(cancelModal()),
-    confirmModal: () => dispatch(confirmModal()),
-    checkTaskUpdate: (uuid: string, status: string) => dispatch(checkTaskUpdate(uuid, status)),
-    checkTaskDelete: (uuid: string) => dispatch(checkTaskDelete(uuid)),
-    checkTaskCreate: (taskList: InterfaceTask[], value: string) => dispatch(checkTaskCreate(taskList, value)),
-    checkTaskClear: () => dispatch(checkTaskClear()),
-});
+const mapDispatchToProps = {
+    cancelModal,
+    confirmModal,
+    checkTaskUpdate,
+    checkTaskDelete,
+    checkTaskCreate,
+    checkTaskClear,
+};
 
 const ConnectedHomepage = connect(
     mapStateToProps,

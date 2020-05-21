@@ -1,1 +1,7 @@
-export const NODE_ENV = 'development';
+export const envProd = {
+    env: 'production',
+};
+
+export const endDev = {
+    env: 'development',
+};

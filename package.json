@@ -7,9 +7,9 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
-    "build": "webpack --mode production",
+    "build": "yarn webpack --env production --config-name build --color",
     "test": "jest --color",
-    "test:coverage": "jest --color --coverage"
+    "test:coverage": "jest --color --coverage && open ./coverage/lcov-report/index.html"
   },
   "dependencies": {
     "connected-react-router": "^6.5.2",

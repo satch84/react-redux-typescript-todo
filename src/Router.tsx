@@ -9,6 +9,7 @@ import { init } from './redux/actions';
 import { configureStore } from './redux/store';
 import { GlobalStyle } from './styledComponents/global';
 import { theme } from './styledComponents/theme';
+import { saveState } from './tools';
 
 export const history = createHistory();
 
@@ -17,6 +18,11 @@ const { store } = configureStore();
 const TodoApp = () => {
   React.useEffect(() => {
     store.dispatch(init());
+    store.subscribe(() => {
+      saveState({
+        tasks: store.getState().tasks
+      });
+    });
   }, []);
 
   return(

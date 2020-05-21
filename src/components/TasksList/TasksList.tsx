@@ -14,12 +14,15 @@ import {
 } from './TasksList.style';
 
 export interface TasksListProps {
-    handleTaskUpdate: (uuid: string, status: string) => () => void,
-    handleTaskDelete: (uuid: string) => () => void,
+    taskUpdate: (uuid: string, status: string) => void,
+    taskDelete: (uuid: string) => void,
     tasks: InterfaceTask[],
 };
 
-export const TasksList: React.FC<TasksListProps> = ({ tasks, handleTaskDelete, handleTaskUpdate }) => {
+export const TasksList: React.FC<TasksListProps> = ({ tasks, taskDelete, taskUpdate }) => {
+    const handleTaskUpdate = (uuid: string, status: string) => () => taskUpdate(uuid, status);
+    const handleTaskDelete = (uuid: string) => () => taskDelete(uuid);
+
     return(
         <TaskItemList>
             {tasks.length > 0 ?
@@ -38,10 +41,16 @@ export const TasksList: React.FC<TasksListProps> = ({ tasks, handleTaskDelete, h
                                     color="primary"
                                     onClick={handleTaskUpdate(task.uuid, task.status)}
                                     isDisabled={task.status === TASK_STATUS_DONE}
+                                    dataTestId="button-task-update"
                                 >
                                     {task.status}
                                 </Button>
-                                <Fab onClick={handleTaskDelete(task.uuid)} size="small" color="secondary">
+                                <Fab 
+                                    onClick={handleTaskDelete(task.uuid)}
+                                    size="small"
+                                    color="secondary"
+                                    dataTestId="button-task-delete"
+                                >
                                     <DeleteIcon />
                                 </Fab>
                             </ButtonWrapper>

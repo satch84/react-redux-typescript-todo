@@ -9,9 +9,10 @@ export interface ButtonProps {
     isDisabled?: boolean;
     size?: 'small' | 'medium' | 'large';
     fullWidth?: boolean;
+    dataTestId?: string;
 }
 
-export const Button: React.FC<ButtonProps> = ({ isDisabled, fullWidth, variant, children, onClick, color, size }) => (
+export const Button: React.FC<ButtonProps> = ({ dataTestId, isDisabled, fullWidth, variant, children, onClick, color, size }) => (
     <MuiButton
         disabled={isDisabled}
         fullWidth={fullWidth}
@@ -20,5 +21,6 @@ export const Button: React.FC<ButtonProps> = ({ isDisabled, fullWidth, variant, 
         children={children}
         onClick={onClick}
         color={color}
+        data-testid={dataTestId}
     />
 );

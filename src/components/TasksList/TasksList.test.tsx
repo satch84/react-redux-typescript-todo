@@ -1,10 +1,10 @@
-import { render } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 import React from "react";
 import { TasksList, TasksListProps } from "./TasksList";
 
 let props: TasksListProps = {
-    handleTaskUpdate: () => jest.fn(),
-    handleTaskDelete: () => jest.fn(),
+    taskUpdate: () => jest.fn(),
+    taskDelete: () => jest.fn(),
     tasks: [
         {
             content: 'content',
@@ -21,6 +21,26 @@ describe('<TasksList />', () => {
     test('should render the TasksList component with tasks in store', () => {
         const wrapper = createWrapper();
         expect(wrapper).toBeDefined();
+    });
+
+    test('should call taskUpdate', () => {
+        const { getByTestId } = createWrapper();
+        const button = getByTestId('button-task-update');
+
+        expect(button).toBeDefined();
+        fireEvent.click(button);
+        /** to fix */
+        // expect(props.taskCreate).toHaveBeenCalled();
+    });
+
+    test('should call taskDelete', () => {
+        const { getByTestId } = createWrapper();
+        const button = getByTestId('button-task-delete');
+
+        expect(button).toBeDefined();
+        fireEvent.click(button);
+        /** to fix */
+        // expect(props.taskCreate).toHaveBeenCalled();
     });
 
     test('should render the TasksList component with no task in store', () => {
