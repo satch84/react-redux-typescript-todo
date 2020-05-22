@@ -1,6 +1,8 @@
 {
   "en": {
     "translation": {
+      "attention": "Attention",
+      "info": "Info",
       "to_do_app": "ToDo App",
       "credits": "Credits",
       "manage_to_do_list": "Manage ToDo list:",
@@ -18,7 +20,11 @@
       "todo_tasks": "ToDo tasks:",
       "progress_tasks": "In progress tasks:",
       "done_tasks": "Done tasks:",
-      "type_task": "Type a task"
+      "type_task": "Type a task",
+      "confirm_delete_task": "Do you confirm the task deletion?",
+      "confirm_delete_tasklist": "Do you confirm the deletion of all tasks?",
+      "confirm_delete_tasklist_title": "Delete tasklist",
+      "confirm_delete_task_title": "Delete task"
     }
   }
 }

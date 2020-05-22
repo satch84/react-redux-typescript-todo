@@ -28,7 +28,7 @@ describe('<TasksList />', () => {
         const button = getByTestId('button-task-update');
 
         expect(button).toBeDefined();
-        // fireEvent.click(button);
+        fireEvent.click(button);
         /** TODO: fix it */
         // expect(props.taskUpdate).toHaveBeenCalled();
     });
@@ -38,7 +38,7 @@ describe('<TasksList />', () => {
         const button = getByTestId('button-task-delete');
 
         expect(button).toBeDefined();
-        // fireEvent.click(button);
+        fireEvent.click(button);
         /** TODO: fix it */
         // expect(props.taskDelete).toHaveBeenCalled();
     });

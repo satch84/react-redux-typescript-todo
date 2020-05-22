@@ -2,8 +2,12 @@ import { MuiThemeProvider as ThemeProvider } from '@material-ui/core';
 import { render } from "@testing-library/react";
 import React from 'react';
 import { Provider } from 'react-redux';
-import { MODAL__CONFIRM_CHOICE, MODAL__EMPTY_VALUE, MODAL__TASK_EXISTS } from '../../const/modals';
-import { configureStore } from '../../redux/store';
+import {
+    MODAL__DELETE_TASK_CONFIRM,
+    MODAL__DELETE_TASKLIST_CONFIRM,
+    MODAL__EMPTY_VALUE,
+    MODAL__TASK_EXISTS,
+} from '../../const/modals';import { configureStore } from '../../redux/store';
 import { theme } from '../../styledComponents/theme';
 import { Modal, ModalProps } from './Modal';
 
@@ -37,10 +41,19 @@ describe('Modal', () => {
     });
 
     it('Should render the ModalConfirmChoice', () => {
-        props.type = MODAL__CONFIRM_CHOICE;
+        props.type = MODAL__DELETE_TASK_CONFIRM;
         const { container, getByTestId } = create();
 
-        const confirmChoiceModal = getByTestId('modal-confirm-choice');
+        const confirmChoiceModal = getByTestId('modal-delete-task');
+        expect(container).toBeDefined();
+        expect(confirmChoiceModal).toBeDefined();
+    });
+
+    it('Should render the ModalConfirmChoice', () => {
+        props.type = MODAL__DELETE_TASKLIST_CONFIRM;
+        const { container, getByTestId } = create();
+
+        const confirmChoiceModal = getByTestId('modal-delete-tasklist');
         expect(container).toBeDefined();
         expect(confirmChoiceModal).toBeDefined();
     });

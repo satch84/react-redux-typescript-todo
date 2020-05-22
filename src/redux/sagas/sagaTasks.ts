@@ -7,7 +7,12 @@ import {
     TASK__CHECK_DELETE,
     TASK__CHECK_UPDATE,
 } from '../../const/actions';
-import { MODAL__CONFIRM_CHOICE, MODAL__EMPTY_VALUE, MODAL__TASK_EXISTS } from '../../const/modals';
+import {
+    MODAL__DELETE_TASK_CONFIRM,
+    MODAL__DELETE_TASKLIST_CONFIRM,
+    MODAL__EMPTY_VALUE,
+    MODAL__TASK_EXISTS,
+} from '../../const/modals';
 import { TASK_STATUS_DONE, TASK_STATUS_IN_PROGRESS, TASK_STATUS_TODO } from '../../const/taskStatus';
 import { checkExistingTask, createUuid, getDateAndHour } from '../../helpers';
 import { CheckCreateTaskAction, DeleteTaskAction, UpdateTaskAction } from '../../models';
@@ -32,7 +37,7 @@ export function* sagaCreateTask({ value, taskList }: CheckCreateTaskAction) {
 }
 
 export function* sagaDeleteTask({ uuid }: DeleteTaskAction) {
-    const confirmation = yield call(confirmSaga);
+    const confirmation = yield call(confirmSaga, MODAL__DELETE_TASK_CONFIRM);
     if (!confirmation) {
         return;
     }
@@ -55,15 +60,15 @@ export function* sagaUpdateTask({ uuid, status }: UpdateTaskAction) {
 }
 
 export function* sagaClearTasklist() {
-    const confirmation = yield call(confirmSaga);
+    const confirmation = yield call(confirmSaga, MODAL__DELETE_TASKLIST_CONFIRM);
     if (!confirmation) {
         return;
     }
     yield put(taskClear());
 }
 
-export function* confirmSaga() {
-    yield put(showModal(MODAL__CONFIRM_CHOICE));
+export function* confirmSaga(modalType: string) {
+    yield put(showModal(modalType));
 
     const { confirm } = yield race({
         confirm: take(MODAL__CONFIRM),

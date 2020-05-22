@@ -2,6 +2,7 @@ import { Modal as MuiModal } from '@material-ui/core';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../Button';
+import { ModalActions, ModalBody, ModalContent, ModalTitle } from '../Modal.style';
 
 export interface ModalEmptyValueProps {
     onConfirm: () => void;
@@ -11,15 +12,15 @@ export const ModalEmptyValue: React.FC<ModalEmptyValueProps> = ({ onConfirm }) =
     const { t } = useTranslation();  
 
     const body = (
-        <div>
-            <h2>{t('warning')}</h2>
-            <div>
+        <ModalBody>
+            <ModalTitle>{t('info')}</ModalTitle>
+            <ModalContent>
                 {t('modal_empty_value_message')}
-            </div>
-            <div data-testid='modal-action-button-container'>
+            </ModalContent>
+            <ModalActions data-testid='modal-action-button-container'>
                 <Button color='primary' variant='contained' onClick={onConfirm}>{t('ok')}</Button>
-            </div>
-        </div>
+            </ModalActions>
+        </ModalBody>
     );
 
     return (

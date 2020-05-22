@@ -34,6 +34,7 @@ Unit tests :
 Evolution :
 -----------
 * add cancel option when deleting a task / clear all tasks
+* manage single task deletion / clear the whole tasklist in sagaTasks
 - add language selection from the store (+ dropdown in front)
 - add task selection via chechbox
 - add pagination (5 tasks per page)

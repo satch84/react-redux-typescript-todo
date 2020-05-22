@@ -26,10 +26,10 @@ describe('<TaskForm />', () => {
 
     test('should call taskCreate', () => {
         const { container, getByText } = createWrapper();
-        const button = getByText('Add a task');
+        const button = getByText('add_task');
 
         expect(container).toBeDefined();
-        // fireEvent.click(button);
+        fireEvent.click(button);
         /** TODO: fix it */
         // expect(props.taskCreate).toHaveBeenCalled();
     });

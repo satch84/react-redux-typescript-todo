@@ -1,18 +1,18 @@
 import { render } from "@testing-library/react";
 import React from 'react';
-import { ModalConfirmChoice, ModalConfirmChoiceProps } from './ModalConfirmChoice';
+import { ModalDeleteTaskConfirm, ModalDeleteTaskConfirmProps } from './ModalDeleteTaskConfirm';
 
 const mockedOnConfirm = jest.fn();
 const mockedOnCancel = jest.fn();
 
-let props: ModalConfirmChoiceProps = {
+let props: ModalDeleteTaskConfirmProps = {
     onCancel: mockedOnCancel,
     onConfirm: mockedOnConfirm,
 };
 
-describe('<ModalConfirmChoice />', () => {
+describe('<ModalDeleteTaskConfirm />', () => {
     it('should render the ModalConfirmChoice', () => {
-        const wrapper = render(<ModalConfirmChoice {...props} />);
+        const wrapper = render(<ModalDeleteTaskConfirm {...props} />);
         expect(wrapper).not.toBeNull();
     });
 });
