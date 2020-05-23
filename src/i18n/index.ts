@@ -2,17 +2,14 @@ import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import en from './resources/en.json';
 import fr from './resources/fr.json';
-/**
- * you can add your languages here.
- */
+
 const resources = { ...en, ...fr };
 const i18n = i18next.createInstance().use(initReactI18next);
 
-const fallbackLng = 'en';
-
-export const getI18n = (language = fallbackLng) => {
+export const initI18n = (language: string) => {
     i18n.init({
-        fallbackLng,
+        /** by default language is set to English */
+        fallbackLng: 'en',
         resources,
         interpolation: {
             escapeValue: false,

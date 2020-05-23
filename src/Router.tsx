@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { Route, Router } from 'react-router';
 import { routeCredits, routeHome } from './const/routes';
 import { Credits, Homepage } from './containers';
-import { getI18n } from './i18n';
+import { initI18n } from './i18n';
 import { init } from './redux/actions';
 import { configureStore } from './redux/store';
 import { GlobalStyle } from './styledComponents/global';
@@ -18,10 +18,8 @@ export const history = createHistory();
 const { store } = configureStore();
 
 const TodoApp = () => {
-  /** TODO: add select for en / fr languages
-   * and select it from the store
-   */
-  const i18n = useMemo(() => getI18n('en'), ['en']);
+  /** by default language is set to English */
+  const i18n = useMemo(() => initI18n('en'), ['en']);
 
   React.useEffect(() => {
     store.dispatch(init());

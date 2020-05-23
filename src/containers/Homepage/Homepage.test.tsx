@@ -6,6 +6,13 @@ import { configureStore } from '../../redux/store';
 import { theme } from '../../styledComponents/theme';
 import { Homepage, HomepageProps } from "./Homepage";
 
+jest.mock('react-i18next', () => ({
+    useTranslation: () => ({
+        t: (key: string) => key,
+        i18n: { changeLanguage: (lng: string) => lng },
+    }),
+}));
+
 const mockedCheckTaskCreate = jest.fn();
 const mockedCheckTaskDelete = jest.fn();
 const mockedCheckTaskUpdate = jest.fn();

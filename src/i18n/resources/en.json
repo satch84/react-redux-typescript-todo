@@ -24,7 +24,11 @@
       "confirm_delete_task": "Do you confirm the task deletion?",
       "confirm_delete_tasklist": "Do you confirm the deletion of all tasks?",
       "confirm_delete_tasklist_title": "Delete tasklist",
-      "confirm_delete_task_title": "Delete task"
+      "confirm_delete_task_title": "Delete task",
+      "select_language": "Select language",
+      "french": "French",
+      "english": "English",
+      "language": "Language"
     }
   }
 }

@@ -10,4 +10,3 @@ export type IActionTypes =
     TaskActions
     | ModalActions
     | LoadingAction;
-

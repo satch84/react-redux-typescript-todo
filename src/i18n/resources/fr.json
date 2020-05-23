@@ -1,5 +1,5 @@
 {
-  "en": {
+  "fr": {
     "translation": {
       "attention": "Attention",
       "info": "Info",
@@ -24,7 +24,11 @@
       "confirm_delete_task": "Souhaitez-vous supprimer cette tâche ?",
       "confirm_delete_tasklist": "Souhaitez-vous supprimer toutes les tâches ?",
       "confirm_delete_tasklist_title": "Supprimer la liste des tâches",
-      "confirm_delete_task_title": "Supprimer la tâche"
+      "confirm_delete_task_title": "Supprimer la tâche",
+      "select_language": "Choisir la langue",
+      "french": "Français",
+      "english": "Anglais",
+      "language": "Langue"
     }
   }
 }

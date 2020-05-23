@@ -3,4 +3,5 @@ export * from './InterfaceStore';
 export * from './InterfaceAction';
 export * from './InterfaceSerializedState';
 export * from './InterfaceInitial';
-export * from './interfaceModal';
+export * from './InterfaceModal';
+export * from './InterfaceOptions';
