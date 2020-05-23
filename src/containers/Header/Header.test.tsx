@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import React from "react";
-import { Header } from "./Header";
+import { Header, HeaderProps } from "./Header";
 
 jest.mock('react-i18next', () => ({
     useTranslation: () => ({
@@ -9,9 +9,16 @@ jest.mock('react-i18next', () => ({
     }),
 }));
 
+const mockedSelectLanguage = jest.fn();
+
+const props: HeaderProps = {
+    language: 'en',
+    selectLanguage: mockedSelectLanguage,
+};
+
 describe('<Header />', () => {
     test('should render the Header component', () => {
-        const wrapper = render(<Header />);
+        const wrapper = render(<Header {...props} />);
         expect(wrapper).toBeDefined();
     });
 });

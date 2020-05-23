@@ -1,3 +1,4 @@
+import { LanguageAction } from './InterfaceLanguage';
 import { LoadingAction } from './interfaceLoading';
 import { ModalActions } from './interfaceModal'; 
 import { TaskActions } from './InterfaceTask';
@@ -9,4 +10,5 @@ export interface IAction {
 export type IActionTypes = 
     TaskActions
     | ModalActions
-    | LoadingAction;
+    | LoadingAction
+    | LanguageAction;

@@ -4,10 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 import { TaskForm } from '../../components/Form';
-import { Header } from '../../components/Header';
 import { MainContent } from '../../components/MainContent';
 import { TasksList } from '../../components/TasksList';
 import { InterfaceTask } from '../../models';
+import { Header } from '../Header';
 import { Modal } from '../Modal';
 import { TaskListsOrdered } from '../TaskListsOrdered';
 import { MainContentStyled, TaskContentWrapper } from './Homepage.style';
@@ -37,9 +37,9 @@ export const Homepage: React.FC<HomepageProps> = ({
 }) => {
     const { t } = useTranslation();
 
-    const [value, setValue] = React.useState(null);
+    const [taskValue, setTaskValue] = React.useState(null);
 
-    const handleChange = (event: any) => setValue(event.target.value);
+    const handleChange = (event: any) => setTaskValue(event.target.value);
 
     return (
         <MainContentStyled>
@@ -52,7 +52,7 @@ export const Homepage: React.FC<HomepageProps> = ({
                     </TaskContentWrapper>
                     <TaskContentWrapper item={true} xs={12} sm={6}>
                         <TaskForm
-                            value={value}
+                            value={taskValue}
                             onChange={handleChange}
                             tasks={tasks}
                             taskCreate={checkTaskCreate}

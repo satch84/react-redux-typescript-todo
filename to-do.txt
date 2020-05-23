@@ -20,7 +20,7 @@ Design :
 --------
 - skin the app
     * add modal when task exists / add an empty task / delete a task
-        -> style modal correctly + icon add next to title (warning / info)
+        */- style modal correctly + icon add next to title (warning / info)
         * replace bad alerts...
         * set up different modal types
     * add modal cancel / confirmation flow
@@ -35,6 +35,6 @@ Evolution :
 -----------
 * add cancel option when deleting a task / clear all tasks
 * manage single task deletion / clear the whole tasklist in sagaTasks
-- add language selection from the store (+ dropdown in front)
+* add language selection from the store (+ dropdown in front) + skin it
 - add task selection via chechbox
 - add pagination (5 tasks per page)

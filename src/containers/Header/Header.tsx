@@ -1,24 +1,30 @@
-import { Select as MuiSelect } from '@material-ui/core';
-import FormControl from '@material-ui/core/FormControl';
-import MenuItem from '@material-ui/core/MenuItem';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Select } from '../../components/Form/Select';
+import { Navigation } from '../../components/Navigation';
 import { routeHome } from '../../const/routes';
-import { Select } from '../Form/Select';
-import { Navigation } from '../Navigation';
 import { MainHeaderStyled } from './Header.style';
 
-export const Header: React.FC = () => {
+export interface HeaderProps {
+    language: string;
+    selectLanguage: (language: string) => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ language, selectLanguage }) => {
     const { t, i18n } = useTranslation();
-    const [language, setLanguage] = useState('');
+    /** user language is set to English by default */
+    const [userLanguage, setUserLanguage] = useState(language);
 
     const handleChange = (event: React.ChangeEvent<{ value: string }>) => {
-        setLanguage(event.target.value as string);
+        setUserLanguage(event.target.value as string);
     };
 
     useEffect(() => {
-        i18n.changeLanguage(language);
-    }, [language]);
+        /** set user language */
+        i18n.changeLanguage(userLanguage);
+        /** save selected language into the store */
+        selectLanguage(userLanguage);
+    }, [userLanguage]);
 
     const headerLinks = {
         'accueil': [
@@ -29,7 +35,7 @@ export const Header: React.FC = () => {
         ],
     };
 
-    const options = [
+    const selectOptions = [
         {
             label: 'english',
             value: 'en',
@@ -42,7 +48,7 @@ export const Header: React.FC = () => {
 
     return(
         <MainHeaderStyled>
-            <Select onChange={handleChange} value={language} options={options} />
+            <Select onChange={handleChange} value={userLanguage} options={selectOptions} />
             <Navigation links={headerLinks} />
         </MainHeaderStyled>
     );

@@ -5,3 +5,4 @@ export * from './InterfaceSerializedState';
 export * from './InterfaceInitial';
 export * from './InterfaceModal';
 export * from './InterfaceOptions';
+export * from './InterfaceLanguage';

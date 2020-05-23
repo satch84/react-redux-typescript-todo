@@ -12,7 +12,7 @@ export const NavigationItem = withTheme(styled.li`
     margin: 0 10px;
 `);
 
-export const NavigationLink = withTheme(styled.a`
+export const NavigationLink = withTheme(styled.span`
     color: ${props => props.theme.palette.common.white};
     font-weight: 600;
     text-transform: uppercase;

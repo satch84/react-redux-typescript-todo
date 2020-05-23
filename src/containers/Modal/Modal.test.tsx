@@ -7,7 +7,8 @@ import {
     MODAL__DELETE_TASKLIST_CONFIRM,
     MODAL__EMPTY_VALUE,
     MODAL__TASK_EXISTS,
-} from '../../const/modals';import { configureStore } from '../../redux/store';
+} from '../../const/modals';
+import { configureStore } from '../../redux/store';
 import { theme } from '../../styledComponents/theme';
 import { Modal, ModalProps } from './Modal';
 

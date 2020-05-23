@@ -16,3 +16,5 @@ export const MODAL__SHOW = 'MODAL__SHOW';
 export const MODAL__HIDE = 'MODAL__HIDE';
 export const MODAL__CONFIRM = 'MODAL__CONFIRM';
 export const MODAL__CANCEL = 'MODAL__CANCEL';
+
+export const LANGUAGE__SELECT = 'LANGUAGE__SELECT';
