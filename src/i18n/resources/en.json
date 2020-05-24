@@ -28,7 +28,10 @@
       "select_language": "Select language",
       "french": "French",
       "english": "English",
-      "language": "Language"
+      "language": "Language",
+      "credits_text": "ToDo App developed by Satch under free licence, so feel free to use clone it, use, and modify it as you wish.",
+      "credits_text_2": "Also, this page is here to show you that the store can still be reached when the route change.",
+      "credits_text_3": "Hope you'll enjoy the app!"
     }
   }
 }

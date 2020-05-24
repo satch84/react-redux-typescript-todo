@@ -8,13 +8,11 @@ export const NavigationList = withTheme(styled.ul`
 export const NavigationItem = withTheme(styled.li`
     color: ${props => props.theme.palette.common.white};
     display: inline;
-    font-weight: 600;
     margin: 0 10px;
 `);
 
 export const NavigationLink = withTheme(styled.span`
     color: ${props => props.theme.palette.common.white};
-    font-weight: 600;
-    text-transform: uppercase;
+    text-transform: capitalize;
     text-decoration: none;
 `);

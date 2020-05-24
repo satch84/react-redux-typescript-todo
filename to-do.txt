@@ -11,7 +11,7 @@ Core :
 */- add redux-sagas with example of data fetching
     -> add loaders (modal styled with rotating icon)
 * add i18next
-* define node_env to development
+* defienne node_v to development
 * add Redux devtools
 * add React-Testing-Library and Jest
 - add esLint
@@ -24,6 +24,8 @@ Design :
         * replace bad alerts...
         * set up different modal types
     * add modal cancel / confirmation flow
+    * skin dropdown for language selection
+    - add arrow icon for href
 
 Unit tests :
 ------------
@@ -36,5 +38,4 @@ Evolution :
 * add cancel option when deleting a task / clear all tasks
 * manage single task deletion / clear the whole tasklist in sagaTasks
 * add language selection from the store (+ dropdown in front) + skin it
-- add task selection via chechbox
 - add pagination (5 tasks per page)

@@ -31,6 +31,12 @@ export const TaskContent = styled(Typography)`
     }
 `;
 
+export const TaskTitle = styled(Typography)`
+    && {
+        font-weight: 600;
+    }
+`;
+
 export const TaskContentWrapper = styled.div`
     margin-bottom: 10px;
 `;

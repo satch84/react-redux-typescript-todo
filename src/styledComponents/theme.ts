@@ -22,7 +22,7 @@ export const theme = createMuiTheme({
             light: '#BCD7EC',
             main: '#7AAFD9',
             dark: '#4991CB',
-            contrastText: '#366A94',
+            contrastText: '#2b597b',
         },
         secondary: {
             light: '#C94147',
@@ -37,7 +37,7 @@ export const theme = createMuiTheme({
         background: {
             default: '#FFFFFF',
             paper: '#EEEEEE',
-        }
+        },
     },
     typography: {
         h1: {

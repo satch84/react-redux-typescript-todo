@@ -28,7 +28,10 @@
       "select_language": "Choisir la langue",
       "french": "Français",
       "english": "Anglais",
-      "language": "Langue"
+      "language": "Langue",
+      "credits_text": "Cette ToDo App a été développée par Satch, et est parfaitement libre de droits.",
+      "credits_text_2": "Vous pouvez donc la cloner, l'utiliser et la modifier comme vous semble.",
+      "credits_text_3": "J'espère que vous aurez apprécié cette application !"
     }
   }
 }

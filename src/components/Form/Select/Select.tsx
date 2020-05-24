@@ -1,9 +1,8 @@
 import { Select as MuiSelect } from '@material-ui/core';
-import FormControl from '@material-ui/core/FormControl';
-import MenuItem from '@material-ui/core/MenuItem';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { SelectOptions } from '../../../models';
+import { FormControlStyled, MenuItemStyled } from './Select.style';
 
 export interface SelectProps {
     value: string;
@@ -15,18 +14,18 @@ export const Select: React.FC<SelectProps> = ({ onChange, options, value }) => {
     const { t } = useTranslation();
 
     return (
-        <FormControl>
+        <FormControlStyled>
             <MuiSelect
                 data-testid="select-helper"
                 value={value}
                 onChange={onChange}
             >
                 {options.map((option, index) => (
-                    <MenuItem value={option.value} key={index}>
+                    <MenuItemStyled value={option.value} key={index}>
                         {t(option.label)}
-                    </MenuItem>
+                    </MenuItemStyled>
                 ))}
             </MuiSelect>
-        </FormControl>
+        </FormControlStyled>
     );
 };

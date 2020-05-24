@@ -1,4 +1,3 @@
-import { Typography } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
@@ -11,7 +10,8 @@ import {
     TaskContentWrapper,
     TaskDateWrapper,
     TaskItem,
-    TaskItemList
+    TaskItemList,
+    TaskTitle,
 } from './TasksList.style';
 
 export interface TasksListProps {
@@ -32,7 +32,7 @@ export const TasksList: React.FC<TasksListProps> = ({ tasks, taskDelete, taskUpd
                     return (
                         <TaskItem key={key}>
                             <TaskDateWrapper>
-                                <Typography variant="body2" color="primary">{task.date}</Typography>
+                                <TaskTitle variant="body2" color="primary">{task.date}</TaskTitle>
                             </TaskDateWrapper>
                             <TaskContentWrapper>
                                 <TaskContent variant="body1">{task.content}</TaskContent>
