@@ -1,4 +1,5 @@
 import { Modal as MuiModal } from '@material-ui/core';
+import InfoIcon from '@material-ui/icons/Info';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../Button';
@@ -13,7 +14,7 @@ export const ModalEmptyValue: React.FC<ModalEmptyValueProps> = ({ onConfirm }) =
 
     const body = (
         <ModalBody>
-            <ModalTitle>{t('info')}</ModalTitle>
+            <ModalTitle><InfoIcon /> {t('info')}</ModalTitle>
             <ModalContent>
                 {t('modal_empty_value_message')}
             </ModalContent>

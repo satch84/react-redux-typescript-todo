@@ -1,4 +1,5 @@
-import { Grid, Modal as MuiModal } from '@material-ui/core';
+import { Modal as MuiModal } from '@material-ui/core';
+import WarningIcon from '@material-ui/icons/Warning';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../Button';
@@ -14,7 +15,7 @@ export const ModalDeleteTaskConfirm: React.FC<ModalDeleteTaskConfirmProps> = ({ 
 
     const body = (
         <ModalBody>
-            <ModalTitle>{t('confirm_delete_task_title')}</ModalTitle>
+            <ModalTitle><WarningIcon /> {t('confirm_delete_task_title')}</ModalTitle>
             <ModalContent>
                 {t('confirm_delete_task')}
             </ModalContent>

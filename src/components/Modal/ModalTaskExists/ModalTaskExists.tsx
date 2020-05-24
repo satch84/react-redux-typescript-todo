@@ -1,4 +1,5 @@
-import { Grid, Modal as MuiModal } from '@material-ui/core';
+import { Modal as MuiModal } from '@material-ui/core';
+import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../Button';
@@ -13,7 +14,7 @@ export const ModalTaskExists: React.FC<ModalTaskExistsProps> = ({ onConfirm }) =
 
     const body = (
         <ModalBody>
-            <ModalTitle>{t('attention')}</ModalTitle>
+            <ModalTitle><ErrorOutlineIcon /> {t('attention')}</ModalTitle>
             <ModalContent>
                 {t('modal_task_exists_message')}
             </ModalContent>

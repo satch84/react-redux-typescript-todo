@@ -1,4 +1,4 @@
-import { Grid, withTheme } from '@material-ui/core';
+import { withTheme } from '@material-ui/core';
 import styled from 'styled-components';
 
 export const ModalBody = withTheme(styled.div`
@@ -26,5 +26,12 @@ export const ModalActions = withTheme(styled.div`
 `);
 
 export const ModalTitle = withTheme(styled.h2`
+    display: flex;
+    align-items: center;
     margin-top: 0;
+
+    svg {
+        margin-right: 10px;
+        fill: ${props => props.theme.palette.primary.dark};
+    }
 `);
