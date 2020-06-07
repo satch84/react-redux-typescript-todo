@@ -19,7 +19,7 @@ export const checkExistingTask = (taskContent: string, taskList: InterfaceTask[]
     let taskExists = false;
 
     if (taskList.length > 0) {
-        taskList.map((task: InterfaceTask, key: number) => {
+        taskList.map((task: InterfaceTask) => {
             if (task.content === taskContent) {
                 taskExists = true;
             }

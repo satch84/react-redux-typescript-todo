@@ -1,5 +1,5 @@
 import { Grid } from '@material-ui/core';
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
@@ -22,7 +22,7 @@ export interface HomepageProps {
     modalType: string;
     cancelModal: () => void;
     confirmModal: () => void;
-};
+}
 
 export const Homepage: React.FC<HomepageProps> = ({
     checkTaskUpdate,
@@ -39,7 +39,7 @@ export const Homepage: React.FC<HomepageProps> = ({
 
     const [taskValue, setTaskValue] = React.useState(null);
 
-    const handleChange = (event: any) => setTaskValue(event.target.value);
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => setTaskValue(event.target.value);
 
     return (
         <MainContentStyled>

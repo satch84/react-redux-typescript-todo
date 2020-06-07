@@ -1,10 +1,10 @@
 import { put, takeLatest } from 'redux-saga/effects';
 import { INITIAL__INIT } from '../../const/actions';
-import { loadingStartAction, loadingStopAction, showModal } from '../actions'; 
+import { loadingStartAction, loadingStopAction } from '../actions'; 
 
 export function* init() {
     yield put(loadingStartAction());
-    console.log('calling saga init here, need to call some async data!');
+    // console.log('calling saga init here, need to call some async data!');
     yield put(loadingStopAction());
 }
 

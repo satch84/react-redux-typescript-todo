@@ -4,7 +4,7 @@ import { ModalEmptyValue, ModalEmptyValueProps } from './ModalEmptyValue';
 
 const mockedOnConfirm = jest.fn();
 
-let props: ModalEmptyValueProps = {
+const props: ModalEmptyValueProps = {
     onConfirm: mockedOnConfirm,
 };
 

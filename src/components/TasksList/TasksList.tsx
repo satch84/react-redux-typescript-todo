@@ -18,7 +18,7 @@ export interface TasksListProps {
     taskUpdate: (uuid: string, status: string) => void,
     taskDelete: (uuid: string) => void,
     tasks: InterfaceTask[],
-};
+}
 
 export const TasksList: React.FC<TasksListProps> = ({ tasks, taskDelete, taskUpdate }) => {
     const { t } = useTranslation();

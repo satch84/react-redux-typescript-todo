@@ -6,7 +6,7 @@ import { configureStore } from '../../redux/store';
 import { theme } from '../../styledComponents/theme';
 import { TaskListsOrdered, TaskListsOrderedProps } from "./TaskListsOrdered";
 
-let props: TaskListsOrderedProps = {
+const props: TaskListsOrderedProps = {
     allTasksList: [],
     doneTasksList: [],
     todoTasksList: [],

@@ -10,7 +10,7 @@ export interface TaskListsOrderedProps {
     todoTasksList: [],
     inProgressTasksList: [],
     tasks: InterfaceTask[];
-};
+}
 
 export const TaskListsOrdered: React.FC<TaskListsOrderedProps> = ({ allTasksList, doneTasksList, todoTasksList, inProgressTasksList, tasks }) => {
     const { t } = useTranslation();

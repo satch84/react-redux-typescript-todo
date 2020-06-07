@@ -1,4 +1,4 @@
-import { MODAL__CANCEL, MODAL__CONFIRM, MODAL__HIDE, MODAL__SHOW } from '../../const/actions';
+import { MODAL__CANCEL, MODAL__CONFIRM, MODAL__SHOW } from '../../const/actions';
 import { ShowModalAction } from '../../models';
 
 export const showModal = (modalType: string): ShowModalAction => ({

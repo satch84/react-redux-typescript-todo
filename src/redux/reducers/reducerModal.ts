@@ -13,7 +13,7 @@ export const modal = (state = initialState.modal, action: IActionTypes) => {
                 modalType: undefined,
             }
 
-        case MODAL__SHOW: 
+        case MODAL__SHOW: {
             const {
                 modalType,
             } = action as ShowModalAction;
@@ -23,6 +23,7 @@ export const modal = (state = initialState.modal, action: IActionTypes) => {
                 isModalOpened: true,
                 modalType,
             }
+        }
 
         default:
             return state;

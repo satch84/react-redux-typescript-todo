@@ -14,7 +14,7 @@ Core :
 * defienne node_v to development
 * add Redux devtools
 * add React-Testing-Library and Jest
-- add esLint
+* add esLint
 
 Design :
 --------
@@ -39,3 +39,6 @@ Evolution :
 * manage single task deletion / clear the whole tasklist in sagaTasks
 * add language selection from the store (+ dropdown in front) + skin it
 - add pagination (5 tasks per page)
+
+- : ToDo
+* : Done

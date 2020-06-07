@@ -24,7 +24,7 @@ export const Credits: React.FC = () => {
                             {t('credits_text_3')}
                         </ContentStyled>
                         <LinkContainerStyle>
-                            <ArrowForwardIcon /> <a href="https://github.com/satch84" target="_blank">Github</a>
+                        <ArrowForwardIcon /> <a href="https://github.com/satch84" target="_blank" rel="noreferrer">Github</a>
                         </LinkContainerStyle>
                     </CreditContentStyled>
                 </MainContent>

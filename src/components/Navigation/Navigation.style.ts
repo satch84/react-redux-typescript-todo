@@ -7,6 +7,7 @@ export const NavigationList = withTheme(styled.ul`
 
 export const NavigationItem = withTheme(styled.li`
     color: ${props => props.theme.palette.common.white};
+    cursor: pointer;
     display: inline;
     margin: 0 10px;
 `);

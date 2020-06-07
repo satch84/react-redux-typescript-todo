@@ -4,7 +4,7 @@ import { initialState } from '../store/initialState';
 
 export const tasks = (state = initialState.tasks, action: IActionTypes)   => {
     switch (action.type) {
-        case TASK__CREATE:
+        case TASK__CREATE: {
             const {
                 task,
             } = action as CreateTaskAction;
@@ -13,8 +13,9 @@ export const tasks = (state = initialState.tasks, action: IActionTypes)   => {
                 ...state,
                 task,
             ];
+        }
 
-        case TASK__UPDATE:
+        case TASK__UPDATE: {
             const {
                 uuid, status,
             } = action as UpdateTaskAction;
@@ -25,6 +26,7 @@ export const tasks = (state = initialState.tasks, action: IActionTypes)   => {
                     { ...task, status: status } : task
                 ),
             ];
+        }
 
         case TASK__DELETE: {
             const {

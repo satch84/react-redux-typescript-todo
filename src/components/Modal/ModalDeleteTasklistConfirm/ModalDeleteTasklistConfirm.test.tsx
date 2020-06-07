@@ -5,7 +5,7 @@ import { ModalDeleteTasklistConfirm, ModalDeleteTasklistConfirmProps } from './M
 const mockedOnConfirm = jest.fn();
 const mockedOnCancel = jest.fn();
 
-let props: ModalDeleteTasklistConfirmProps = {
+const props: ModalDeleteTasklistConfirmProps = {
     onCancel: mockedOnCancel,
     onConfirm: mockedOnConfirm,
 };

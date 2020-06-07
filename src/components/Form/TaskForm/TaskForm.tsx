@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Textfield } from '../../';
 import { InterfaceTask } from '../../../models';
 import { FormTitle, FormWrapper } from './TaskForm.style'; 
 
 export interface TaskFormProps {
-    onChange: (event: any) => void;
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
     taskCreate: (tasks: InterfaceTask[], value: string) => void;
     tasks: InterfaceTask[];
     value: string;

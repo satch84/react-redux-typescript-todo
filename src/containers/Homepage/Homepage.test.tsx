@@ -20,7 +20,7 @@ const mockedCheckTaskClear = jest.fn();
 const mockedCancelModal = jest.fn();
 const mockedConfirmModal = jest.fn();
 
-let props: HomepageProps = {
+const props: HomepageProps = {
     isModalOpened: true,
     checkTaskCreate: () => mockedCheckTaskCreate,
     checkTaskDelete: () => mockedCheckTaskDelete,

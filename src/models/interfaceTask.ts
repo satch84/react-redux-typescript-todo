@@ -5,7 +5,7 @@ export interface InterfaceTask {
     date: string;
     content: string;
     status: string;
-};
+}
 
 export interface CreateTaskAction extends IAction {
     task: InterfaceTask;

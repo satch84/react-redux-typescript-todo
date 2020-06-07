@@ -6,8 +6,8 @@ export interface IStore {
     language: string,
     modal: {
         isModalOpened: boolean,
-        modalType: string | undefined,
+        modalType: string|undefined,
     },
     router: RouterState | undefined,
     tasks: InterfaceTask[],
-};
+}

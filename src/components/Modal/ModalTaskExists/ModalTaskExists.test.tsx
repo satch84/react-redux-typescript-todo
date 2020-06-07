@@ -4,7 +4,7 @@ import { ModalTaskExists, ModalTaskExistsProps } from './ModalTaskExists';
 
 const mockedOnConfirm = jest.fn();
 
-let props: ModalTaskExistsProps = {
+const props: ModalTaskExistsProps = {
     onConfirm: mockedOnConfirm,
 };
 

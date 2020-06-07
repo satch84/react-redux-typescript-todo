@@ -1,5 +1,5 @@
 import { TextField as MuiTextField } from '@material-ui/core';
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 
 export interface TextfieldProps {
     hasError?: boolean;
@@ -7,7 +7,7 @@ export interface TextfieldProps {
     isRequired?: boolean;
     label?: string;
     value?: string;
-    onChange?: (arg: any) => void;
+    onChange?: (arg: ChangeEvent<HTMLInputElement>) => void;
     fullWidth: boolean;
 }
 
